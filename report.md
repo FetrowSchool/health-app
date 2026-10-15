@@ -2,8 +2,8 @@
 
 ## **Repository Information**
 
-- **Repository URL:** [Insert GitHub Repository URL]
-- **Commit Hash:** [Insert Commit Hash]
+- **Repository URL:** [health-app](https://github.com/FetrowSchool/health-app)
+- **Commit Hash:** 921b1f7a89e6497a3475fb7272b90a371ef5069b
 
 ## **Project Overview**
 
