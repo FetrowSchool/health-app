@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-26",
+  "mode": "mocked provider plus microphone-only browser check",
+  "paid_session_requests": 0,
+  "microphone": {
+    "observed_browser_result": "Microphone granted; all tracks stopped.",
+    "provider_request_made": false
+  },
+  "contract_review": {
+    "official_paths": [
+      "https://developers.openai.com/api/docs/guides/voice-webrtc",
+      "https://developers.openai.com/api/reference/resources/live/methods/create"
+    ],
+    "schema_and_sequence_match": true,
+    "provider_acceptance_verified": false
+  },
+  "minimal_backend": {
+    "port": 8001,
+    "database_used": false,
+    "model": "gpt-live-1",
+    "delegated_models": [],
+    "tools": [],
+    "automatic_retries": 0,
+    "configured_duration_seconds": 30,
+    "provider_timeout_default_seconds": 10
+  },
+  "automated": {
+    "backend_full_before_final_logging_refinement": 86,
+    "backend_focused_final": 35,
+    "frontend_full_final": 76,
+    "production_build_modules": 36,
+    "production_build_passed": true
+  },
+  "nonbillable_network": {
+    "method": "HEAD",
+    "status": 405,
+    "dns_seconds": 0.025,
+    "tcp_tls_upload_headers_completed": true,
+    "credential_sent": false,
+    "session_created": false
+  },
+  "unverified": [
+    "Live SDP answer",
+    "Live peer connection",
+    "Live session.started",
+    "Remote assistant audio/interruption",
+    "Provider project/model access and quota",
+    "Final provider session.closed/usage",
+    "Original provider timeout cause"
+  ]
+}

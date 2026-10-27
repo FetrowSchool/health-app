@@ -1,0 +1,115 @@
+{
+  "scenario": "Fictional local hold-to-run verification only",
+  "provider_calls": 0,
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "protected_files_unchanged": {
+    "report.md": true,
+    "backend/.env": true,
+    "backend/app/voice_session.json": true,
+    "backend/app/voice_provider.py": true,
+    "backend/app/voice_diagnostic.py": true,
+    "backend/app/voice_prompts.py": true,
+    "frontend/src/voiceSession.js": true,
+    "frontend/src/voiceLifecycle.js": true,
+    "frontend/src/components/VoicePanel.vue": true,
+    "frontend/src/components/GroundingScreen.vue": true,
+    "frontend/src/grounding.js": true,
+    "backend/app/providers.py": true,
+    "backend/app/conversation_store.py": true,
+    "backend/app/conversation_controller.py": true,
+    "backend/app/recommendation_policy.py": true
+  },
+  "original_rows": {
+    "exercise_sessions": {
+      "count": 60,
+      "every_original_value_preserved": true,
+      "current_count": 64
+    },
+    "daily_mood_checkins": {
+      "count": 11,
+      "every_original_value_preserved": true,
+      "current_count": 11
+    },
+    "conversations": {
+      "count": 35,
+      "every_original_value_preserved": true,
+      "current_count": 35
+    },
+    "messages": {
+      "count": 66,
+      "every_original_value_preserved": true,
+      "current_count": 66
+    }
+  },
+  "sessions": [
+    {
+      "id": "990cf6ec-0660-4cb7-b190-382a21a7f566",
+      "exercise_type": "paced_breathing",
+      "status": "completed",
+      "started_at": "2026-10-26T23:55:03.838000+00:00",
+      "ended_at": "2026-10-26T23:56:39.719000+00:00",
+      "planned_duration_seconds": 60,
+      "entry_duration_seconds": 2.838,
+      "duration_seconds": 95.881,
+      "active_duration_seconds": 66.147,
+      "optional_continuation_seconds": 6.147,
+      "active_completed_cycles": 6,
+      "interaction_mode": null,
+      "feedback": "skipped"
+    },
+    {
+      "id": "d3bf4fa1-65e4-4c4d-9037-95fea0821b3f",
+      "exercise_type": "paced_breathing",
+      "status": "exited",
+      "started_at": "2026-10-26T23:58:17.669000+00:00",
+      "ended_at": "2026-10-26T23:58:19.051000+00:00",
+      "planned_duration_seconds": 60,
+      "entry_duration_seconds": 3.832,
+      "duration_seconds": 1.382,
+      "active_duration_seconds": 1.214,
+      "optional_continuation_seconds": 0.0,
+      "active_completed_cycles": 0,
+      "interaction_mode": null,
+      "feedback": null
+    },
+    {
+      "id": "c59e41f1-1599-4110-8fd0-7781ccb1278b",
+      "exercise_type": "paced_breathing",
+      "status": "exited",
+      "started_at": "2026-10-26T23:58:27.697000+00:00",
+      "ended_at": "2026-10-26T23:58:28.065000+00:00",
+      "planned_duration_seconds": 60,
+      "entry_duration_seconds": 3.799,
+      "duration_seconds": 0.368,
+      "active_duration_seconds": 0.355,
+      "optional_continuation_seconds": 0.0,
+      "active_completed_cycles": 0,
+      "interaction_mode": null,
+      "feedback": null
+    },
+    {
+      "id": "b5e9d0e5-ae14-4fa0-b740-78f57bea48ab",
+      "exercise_type": "paced_breathing",
+      "status": "completed",
+      "started_at": "2026-10-26T23:59:57.702000+00:00",
+      "ended_at": "2026-10-27T00:00:04.764000+00:00",
+      "planned_duration_seconds": 60,
+      "entry_duration_seconds": 6.905,
+      "duration_seconds": 7.062,
+      "active_duration_seconds": 0.84,
+      "optional_continuation_seconds": 0.0,
+      "active_completed_cycles": 0,
+      "interaction_mode": null,
+      "feedback": "skipped"
+    }
+  ],
+  "schema_version": "7",
+  "foreign_key_issues": 0,
+  "api_comparison": {
+    "session_id": "b5e9d0e5-ae14-4fa0-b740-78f57bea48ab",
+    "all_fields_match_sqlite_after_utc_timestamp_normalization": true
+  }
+}

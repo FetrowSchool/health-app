@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-26",
+  "before": {
+    "live_chars": 0,
+    "backend_chars": 0,
+    "personality_drafts_applied": false
+  },
+  "configured": {
+    "live": {
+      "chars": 2055,
+      "sha256": "e0451d761f39520d7c0c712aba47b8a214d3ae6e9ccd6c26e2db0a4ad4118df9"
+    },
+    "backend": {
+      "chars": 2430,
+      "sha256": "ec477f8202e6e18d5659ce7e0411e3b162befede267320a7c843cee502870750"
+    }
+  },
+  "mock_provider_payload_verified": true,
+  "backend_tests": 37,
+  "frontend_focused_tests": 41,
+  "paid_calls_this_increment": 0,
+  "live_behavior_verified": false,
+  "frontend_full_tests": 77,
+  "runtime_loaded_matches_file": true,
+  "runtime_source": "voice_session.json"
+}

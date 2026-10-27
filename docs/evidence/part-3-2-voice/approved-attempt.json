@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-26",
+  "approved_session_creation_attempts": 1,
+  "automatic_retries": 0,
+  "application_microphone_attempt": {
+    "ui_result": "Microphone permission was not granted",
+    "session_post_sent": false
+  },
+  "provider_attempt": {
+    "transport": "native WebRTC sendrecv audio transceiver and oai-events, no microphone capture",
+    "diagnostic_stage": "provider_request",
+    "upstream_http_status": null,
+    "category": "timeout",
+    "browser_result": "bounded session fetch failed before an answer was returned",
+    "session_id_received": false,
+    "answer_applied": false,
+    "session_started": false,
+    "session_closed": false
+  },
+  "non_session_checks": {
+    "unauthenticated_HEAD_status": 405,
+    "https_total_seconds": 0.112752,
+    "standalone_httpx_import_seconds": 0.076,
+    "standalone_transport_construction_seconds": 0.029
+  },
+  "limitations": [
+    "Prior 502 not reproduced; its upstream error is still unknown.",
+    "Timeout alone does not prove authentication, credits, model access, or absence of an upstream session.",
+    "No confirmed provider session/final usage; no provider billing or retention claim."
+  ]
+}

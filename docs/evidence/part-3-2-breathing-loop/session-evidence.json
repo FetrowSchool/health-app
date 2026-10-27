@@ -1,0 +1,184 @@
+{
+  "note": "Known fictional browser scope only. Application identity omitted. New fields record button-state observations, not breathing. Development HMR left a started row with no summary; do not treat it as completed. No raw interaction events saved or exported.",
+  "schema_version": "6",
+  "sessions": [
+    {
+      "id": "23a9d6ea-d125-4832-99ec-a7f363b5a3bd",
+      "exercise_type": "paced_breathing",
+      "started_at": "2026-10-22T17:58:02.599000+00:00",
+      "ended_at": "2026-10-22T17:58:26.014000+00:00",
+      "status": "exited",
+      "duration_seconds": 23.415,
+      "entry_duration_seconds": 0.001,
+      "planned_duration_seconds": 60,
+      "feedback": null,
+      "interaction_mode": "mixed",
+      "inhale_interactions": 1,
+      "exhale_interactions": 2,
+      "completed_cycles": 2
+    },
+    {
+      "id": "0bc4b705-a6e4-4991-b53e-f8a6c3cf519d",
+      "exercise_type": "paced_breathing",
+      "started_at": "2026-10-22T17:58:58.624000+00:00",
+      "ended_at": null,
+      "status": "started",
+      "duration_seconds": 0.0,
+      "entry_duration_seconds": 0.001,
+      "planned_duration_seconds": 60,
+      "feedback": null,
+      "interaction_mode": null,
+      "inhale_interactions": null,
+      "exhale_interactions": null,
+      "completed_cycles": null
+    },
+    {
+      "id": "8ebbaad5-490d-4b73-9108-3be64cccc601",
+      "exercise_type": "paced_breathing",
+      "started_at": "2026-10-22T18:00:13.570000+00:00",
+      "ended_at": "2026-10-22T18:01:13.577000+00:00",
+      "status": "completed",
+      "duration_seconds": 60.007,
+      "entry_duration_seconds": 0.001,
+      "planned_duration_seconds": 60,
+      "feedback": "helpful",
+      "interaction_mode": "hold",
+      "inhale_interactions": 1,
+      "exhale_interactions": 6,
+      "completed_cycles": 6
+    },
+    {
+      "id": "217e3934-c12f-4bfd-81e9-1bdd6e866f00",
+      "exercise_type": "paced_breathing",
+      "started_at": "2026-10-22T18:02:26.217000+00:00",
+      "ended_at": "2026-10-22T18:02:36.730000+00:00",
+      "status": "exited",
+      "duration_seconds": 10.513,
+      "entry_duration_seconds": 0.001,
+      "planned_duration_seconds": 60,
+      "feedback": null,
+      "interaction_mode": "tap",
+      "inhale_interactions": 2,
+      "exhale_interactions": 0,
+      "completed_cycles": 1
+    },
+    {
+      "id": "694c8ddb-e7c4-4062-bc54-5ec2f996976c",
+      "exercise_type": "paced_breathing",
+      "started_at": "2026-10-22T18:02:37+00:00",
+      "ended_at": "2026-10-22T18:03:37.010000+00:00",
+      "status": "completed",
+      "duration_seconds": 60.01,
+      "entry_duration_seconds": 0.001,
+      "planned_duration_seconds": 60,
+      "feedback": "skipped",
+      "interaction_mode": "observe",
+      "inhale_interactions": 0,
+      "exhale_interactions": 0,
+      "completed_cycles": 6
+    },
+    {
+      "id": "f6f4dda2-485f-4e96-868c-7c8de3b168ed",
+      "exercise_type": "paced_breathing",
+      "started_at": "2026-10-22T18:04:28.452000+00:00",
+      "ended_at": "2026-10-22T18:04:39.485000+00:00",
+      "status": "exited",
+      "duration_seconds": 11.033,
+      "entry_duration_seconds": 0.001,
+      "planned_duration_seconds": 60,
+      "feedback": null,
+      "interaction_mode": "tap",
+      "inhale_interactions": 2,
+      "exhale_interactions": 0,
+      "completed_cycles": 1
+    },
+    {
+      "id": "ae546f36-60c6-4482-9baf-16e0cfd24e86",
+      "exercise_type": "paced_breathing",
+      "started_at": "2026-10-22T18:05:03.067000+00:00",
+      "ended_at": "2026-10-22T18:05:07.565000+00:00",
+      "status": "exited",
+      "duration_seconds": 4.498,
+      "entry_duration_seconds": 0.001,
+      "planned_duration_seconds": 60,
+      "feedback": null,
+      "interaction_mode": "tap",
+      "inhale_interactions": 1,
+      "exhale_interactions": 1,
+      "completed_cycles": 0
+    },
+    {
+      "id": "5cb56786-e352-4f16-a2df-0fec7e7b91ad",
+      "exercise_type": "grounding_54321",
+      "started_at": "2026-10-22T18:05:31.680000+00:00",
+      "ended_at": "2026-10-22T18:05:33.084000+00:00",
+      "status": "completed",
+      "duration_seconds": 1.404,
+      "entry_duration_seconds": 0.001,
+      "planned_duration_seconds": 70,
+      "feedback": "not_helpful",
+      "interaction_mode": null,
+      "inhale_interactions": null,
+      "exhale_interactions": null,
+      "completed_cycles": null
+    }
+  ],
+  "conversations": [
+    {
+      "id": "365edbf0-af35-4ba3-801c-773855c15db1",
+      "session_id": "8ebbaad5-490d-4b73-9108-3be64cccc601",
+      "kind": "feedback",
+      "provider_mode": "mock",
+      "status": "succeeded"
+    },
+    {
+      "id": "61b51184-15a9-4f99-a99e-24dfab754209",
+      "session_id": null,
+      "kind": "recommendation",
+      "provider_mode": "mock",
+      "status": "succeeded"
+    },
+    {
+      "id": "616ca286-9c68-46bd-bb45-3b39ad6561f6",
+      "session_id": "5cb56786-e352-4f16-a2df-0fec7e7b91ad",
+      "kind": "feedback",
+      "provider_mode": "mock",
+      "status": "succeeded"
+    }
+  ],
+  "api_comparisons": [
+    {
+      "session_id": "23a9d6ea-d125-4832-99ec-a7f363b5a3bd",
+      "result": "SQLite summary/status/duration match scoped GET"
+    },
+    {
+      "session_id": "0bc4b705-a6e4-4991-b53e-f8a6c3cf519d",
+      "result": "SQLite summary/status/duration match scoped GET"
+    },
+    {
+      "session_id": "8ebbaad5-490d-4b73-9108-3be64cccc601",
+      "result": "SQLite summary/status/duration match scoped GET"
+    },
+    {
+      "session_id": "217e3934-c12f-4bfd-81e9-1bdd6e866f00",
+      "result": "SQLite summary/status/duration match scoped GET"
+    },
+    {
+      "session_id": "694c8ddb-e7c4-4062-bc54-5ec2f996976c",
+      "result": "SQLite summary/status/duration match scoped GET"
+    },
+    {
+      "session_id": "f6f4dda2-485f-4e96-868c-7c8de3b168ed",
+      "result": "SQLite summary/status/duration match scoped GET"
+    },
+    {
+      "session_id": "ae546f36-60c6-4482-9baf-16e0cfd24e86",
+      "result": "SQLite summary/status/duration match scoped GET"
+    },
+    {
+      "session_id": "5cb56786-e352-4f16-a2df-0fec7e7b91ad",
+      "result": "SQLite summary/status/duration match scoped GET"
+    }
+  ],
+  "foreign_key_violations": []
+}

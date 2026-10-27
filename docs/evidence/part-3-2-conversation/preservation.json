@@ -1,0 +1,76 @@
+{
+  "protected_files_unchanged": {
+    "report.md": true,
+    "backend/.env": true,
+    "backend/app/voice_session.json": true,
+    "backend/app/voice_provider.py": true,
+    "backend/app/voice_controller.py": true,
+    "backend/app/voice_models.py": true,
+    "backend/app/config.py": true,
+    "backend/app/database.py": true,
+    "backend/app/activity_controller.py": true,
+    "frontend/src/components/BreathingScreen.vue": true,
+    "frontend/src/exerciseTiming.js": true,
+    "frontend/src/breathingInteraction.js": true,
+    "frontend/src/components/GroundingScreen.vue": true,
+    "frontend/src/grounding.js": true,
+    "frontend/src/components/MoodDialog.vue": true,
+    "frontend/src/components/CrisisScreen.vue": true,
+    "frontend/src/voiceSession.js": true,
+    "frontend/src/voiceLifecycle.js": true,
+    "frontend/src/feedbackResponse.js": true,
+    "frontend/src/sessionRecorder.js": true
+  },
+  "tables": {
+    "app_metadata": {
+      "before": 1,
+      "after": 1,
+      "all_rows_exactly_equal": true
+    },
+    "exercise_sessions": {
+      "before": 66,
+      "after": 66,
+      "all_rows_exactly_equal": true
+    },
+    "daily_mood_checkins": {
+      "before": 11,
+      "after": 11,
+      "all_rows_exactly_equal": true
+    },
+    "conversations": {
+      "before": 36,
+      "after": 36,
+      "all_rows_exactly_equal": true
+    },
+    "messages": {
+      "before": 67,
+      "after": 67,
+      "all_rows_exactly_equal": true
+    }
+  },
+  "paid_model_calls": 0,
+  "foreign_key_issues": 0,
+  "historical_recommendation_count": 16,
+  "actual_api_checks": {
+    "health": {
+      "status": 200,
+      "body": {
+        "status": "ok",
+        "database": "ready",
+        "model_configured": true
+      }
+    },
+    "voice_config": {
+      "status": 200,
+      "body": {
+        "status": "configured",
+        "duration_seconds": 60
+      }
+    },
+    "retired_endpoint_absent_from_openapi": true,
+    "retired_endpoint_status": 404,
+    "historical_messages_equal_after_utc_normalization": true,
+    "historical_recommendation_equals_saved_json": true,
+    "historical_kind_source_status_preserved": true
+  }
+}

@@ -224,8 +224,28 @@ next step. A new session must verify these claims against the files. Keep a
 curated record of tools, models, important prompts, and failed or revised
 approaches for the project's AI-use disclosure.
 
-## Current Pause design-review scope
+## Current Pause Part 3.2 Grounding revision scope
 
-The developer has supplied the Pause skills and journey in the existing [design specification](docs/design.md). The earlier startup placeholders no longer describe the current design-review task. Preserve the five static mockups and use the current research mapping and user flow; obtain new decisions only where genuinely unresolved. Current authorization is documentation/research verification only: no installs, working interface, routes, database, credentials, Figma, automatic commits, or `report.md` changes. Stop for review after this increment.
+The latest developer request replaces active STOP with 5-4-3-2-1 Sensory Grounding. Use the exact supplied five instructions/counts and identifier grounding_54321, optional reversible taps, manual Continue/Back, and persistent Exit/Crisis access. Continue is never gated by circles; no model may alter instructions or progression. Preserve historical STOP data, Paced Breathing, existing model configuration, and all unrelated work. A minimal transactionally verified SQLite constraint migration is authorized; no circle details are persisted.
 
-Use docs/design.md as the current design source rather than duplicating it into a new design-pipeline document for this review. The optional completion-response contract and later two-call RAG requirement are distinct; confirm their future milestone/contract before coding. Runtime path is data/app.sqlite3, and secrets later load from backend/.env. Preserve evidence limits: static checks do not establish rendered accessibility, timed usability, or a functional crisis route. Summarize actual checks in docs/verification.md and the current handoff.
+Update current design/research/flow/contracts, README, verification and handoff; preserve original Part 3.1 STOP artifacts as labeled history. Test mock feedback, migration preservation, actual timing and mobile interaction. Do not edit report.md, install packages, use Figma, add RAG/History, commit/push or advance further. No new live model calls are necessary. Keep credentials private in ignored backend/.env. The development process may override MODEL_PROVIDER=mock for verification without changing saved live settings. Stop for review after this increment.
+
+
+## Latest completed provider investigation
+
+The subsequent developer request authorized tracing fictional live Grounding feedback and correcting the provider-selection issue. Root cause was the previous mock process override; backend/.env itself was correct. The backend is now running normally in live mode without that override. One live Grounding request succeeded and persisted with correct frontend source labeling. Source/safety/schema/env were unchanged. Tests must continue to inject mocks without leaving the shared review server silently in mock mode. If temporarily overriding it, restore its intended mode and record actual service state before handing off. Stop after investigation; no report.md changes, commits/pushes or further features.
+
+
+## Current Help Me Choose refinement scope
+
+The latest developer request authorizes optional Home recommendations, structured supported exercise/reviewed reason validation, bounded scoped mood/recent-history context for recommendations and feedback, minimal conversation migration, and verification. Preserve both fixed skills and direct access, daily mood, truthful mock/live/static labels, independent support and immediate Home. Reuse conversation/message records; no free-text input, new therapeutic instructions, RAG/history/Figma, report.md edits, automatic commits/pushes or unrelated features. Use deterministic mocks for routine checks; at most three fictional live-model calls in this increment. Restore ordinary live-configured backend after temporary mock testing and record actual final mode. Stop after reviewable completion.
+
+
+## Latest closed-loop Breathing scope
+
+The developer authorized optional Hold/Tap/Observe interaction, immediate neutral application feedback and nullable per-session interaction summaries. Preserve60s/six4s-in6s-out cycles and independent Exit/support. Observations do not measure respiration; no raw interaction events or new model-generated instructions. Schema6 preserves old rows with NULL summary fields. Tests/evidence/limitations belong in current docs/handoff; no report.md changes, installs, automatic commits/pushes or live calls were needed. Restore ordinary live configuration after mock verification and stop for review.
+
+
+## Current direct-conversation interface scope — October26
+
+The developer replaced active Help Me Choose with the existing voice conversation. Home card uses reviewed browser labels stop to chat / Ai assistant conversation, opening Talk to Pause directly. Do not restore the predefined focus/suggestion workflow. Its creation endpoint/helpers/provider prompt were removed; keep historical recommendation data/read response compatibility and shared feedback context/persistence. The developer confirmed voice plus existing post-exercise text feedback; no typed-chat composer was added. Preserve exercises, mood, independent support, GPT-Live config/prompts/lifecycle and transient-only voice. Existing earlier Help Me Choose scope is historical. No report edits, installs, automatic commits/pushes or paid calls for this increment.
