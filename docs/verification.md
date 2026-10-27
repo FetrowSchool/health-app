@@ -909,3 +909,8 @@ Evidence: [direct-conversation index](evidence/part-3-2-conversation/index.md), 
 
 
 October26 copy follow-up: capitalized the Home card to “Stop to chat”. Production build35 modules passed; refreshed browser confirmed exact label. Screenshot: [capitalized Home](evidence/part-3-2-conversation/04-capitalized-home.png). No behavior/test-suite changes; report.md untouched.
+
+
+## Authorized merge/publication on main — October26, 2026
+
+Clean main fast-forwarded to part-2 checkpoint 7af8d903bd8d1112493e9d1e7946001671dcbd08 without conflicts. The merged application exactly matched part-2. Before first main push: `backend/.venv/bin/python -m unittest discover -s backend/tests -q`86 passed/1.826s; `cd frontend && npm test`70 passed/89.803ms; production35-module build passed/96ms. All provider verification mocked; no new live call. Runtime credentials/data/dependencies/build output remain ignored. First main push succeeded; report commit field now references this checkpoint, with its other prose preserved. Follow-up upload records report/handoff/verification metadata only. During checkout67 byte-identical untracked numbered copies appeared; preserved outside Git under a private temp backup, none uploaded. No source behavior, database records, provider configuration or installed packages changed.

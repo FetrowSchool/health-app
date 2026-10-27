@@ -1,3 +1,15 @@
+# Latest checkpoint — Main merge and requested two uploads, October26, 2026
+
+User authorized merging part-2 into main and repeating the application-checkpoint/report-update upload sequence. Clean main fast-forwarded from166a1abc919745c935c4175a0daa99ed83b3d0ae to 7af8d903bd8d1112493e9d1e7946001671dcbd08 without Git conflicts, preserving both Part3.2 commits. First main upload succeeded at this checkpoint; report.md now references its full hash. The follow-up commit records the report hash and these verification/publication notes. All other report prose is preserved.
+
+Verified on merged main before first push:86 backend tests passed/1.826s,70 frontend tests passed/89.803ms,35-module production build passed/96ms. All model calls mocked; no credentials, database, runtime or application behavior changed. Main matched the tested part-2 tree exactly. Ignored backend/.env/data/dependencies/build output stay excluded.
+
+During checkout67 numbered “ 2” copies appeared as untracked files. Compared every copy byte-for-byte with its canonical file: all identical, no differing content. Preserved them outside the checkout at /private/tmp/pause-icloud-duplicates-f9zc7_yh; pointer /private/tmp/pause-main-duplicates-backup-path. They were never staged/pushed. This preserves the storage-generated copies without publishing duplicate code/evidence. Existing iCloud offloaded Python dependencies were hydrated for verification, no install.
+
+Publication note: iCloud-backed Git index/object reads repeatedly timed out; one staging process exited with SIGBUS. Stopped only our stalled Git commands and used an isolated checkout at /private/tmp/pause-main-publish-1rce5oly for the report commit/push, then synchronized local main without altering working files. No force push or discarded changes.
+
+Current branch main. Stop after the requested two pushes; earlier Part3.2 implementation/limits/evidence remain below. No new paid calls, feature changes, history rewrite or forced push.
+
 # Latest checkpoint — Requested GitHub publication, October26, 2026
 
 User authorized committing/pushing the current Pause app, then updating the report commit reference and uploading again. Published application checkpoint 9df81008087e029a38dd1d68b661fbbfc4d75b67 on branch part-2 to https://github.com/FetrowSchool/health-app. The follow-up report commit references this application checkpoint; report wording otherwise preserves the developer’s existing draft. This explicit request supersedes earlier no-commit/no-report limits for this publication only.
