@@ -3,38 +3,49 @@
 ## **Repository Information**
 
 - **Repository URL:** https://github.com/FetrowSchool/health-app
-- **Commit Hash:** 921b1f7a89e6497a3475fb7272b90a371ef5069b
+- **Commit Hash:** 9df81008087e029a38dd1d68b661fbbfc4d75b67
 
 ## **Project Overview**
 
-For Assignment 3, I designed a mental health app with the placeholder name "Pause". The app focuses on simplicity and accessibility. The application is currently planned to support two exercises: Paced Breathing and STOP. My goal is to make the app easy to navigate without unnecessary reading, typing, or complicated menus.
+For Assignment 3.2, I developed a working version of "Pause", a mental health skills application designed around simplicity and accessibility. The application now has two working exercises: Paced Breathing and 5-4-3-2-1 Sensory Grounding.
 
-## **Application Design**
+The goal was to create an app that allows users to complete exercises with minimal reading, typing, or unnecessary navigation.
 
-The application uses a mobile style interface with five main screens:
+## **Application Features**
 
-1. Daily mood check-in popup
-2. Home screen with exercise selection
-3. Paced Breathing exercise
-4. STOP exercise
-5. Completion and optional feedback
+The application includes a daily mood check-in that appears once per day and allows users to select their mood. From the home screen, users can choose either exercise directly or use the AI-powered Help Me Choose feature.
 
-The daily mood check in asks users how they are feeling and allows them to select an option or skip. Users can then choose either exercise and each exercise is designed to take around 60 seconds. Users are able to exit exercises whenever they want. The interface uses large buttons, simple icons, and neutral colors to keep navigation straightforward.
+Paced Breathing guides users through six cycles of 4 second inhales and 6 second exhales using an animated circle and countdown. Sensory Grounding guides users through the five senses using buttons to track their progress. All exercises and screens allow users to exit at any time and Crisis Support remains accessible the whole time.
 
 ## **Research-Based Decisions**
 
 The design follows the research requirements R1–R4 and design principles D1–D6 provided in the assignment. These findings helped make decisions such as keeping exercises short, displaying one instruction at a time, minimizing required input, and allowing users to control their experience. Crisis support access remains visible throughout the application. The daily mood check in also provides a simple way to personalize the experience without requiring users to configure settings.
 
 
-## **AI Integration and Data Storage**
+## **AI Integration**
 
-The application will use a conversational language model to provide short, optional responses after exercises. The model will not control exercise steps, timing, navigation, or crisis-support access. 
+I integrated OpenRouter using the model nemotron 3 ultra.
 
-The planned technology stack includes Vue, FastAPI, and SQLite. The database will store mood check-ins, exercise sessions, optional feedback, and conversation records. Saved activity may eventually help personalize the order of exercise options.
+The AI is used in two ways:
+
+* Help Me Choose: Suggests an exercise based on the user’s selected focus, optional daily mood, and recent exercise history.
+* Exercise Feedback: Generates short responses after users select Helpful or Not Helpful.
+
+I also integrated a live ai voice model using GPT-Live-1.
+
+This allows users to speak directly with the AI instead of relying only on the text-based options. The voice assistant is designed to be conversational and supportive while also offering practical suggestions and recommending exercises available in the application. The implementation uses WebRTC to handle live audio between the browser and OpenAI, while FastAPI manages session creation and keeps API credentials secure. Users can mute, end, or interrupt conversations, and the existing text-based features remain available.
+
+## **Database and Persistence**
+
+The application uses SQLite to save daily check ins, exercise sessions, optional feedback, and AI conversations.  
+
+Database persistence was verified by restarting the backend and confirming that saved records remained available.
 
 ## **Safety and Accessibility**
 
-The design includes a persistent crisis support button, skippable prompts, and the ability to leave exercises immediately and freely. The crisis support route will operate independently of the language model.
+Crisis Support is available independently of the language model and backend. Users can exit exercises immediately, skip optional prompts, and return home during AI requests or failures.
+
+The interface uses large labeled buttons, simple navigation, neutral colors, and reduced-motion support.
 
 ## **Design and Verification Evidence**
 
@@ -47,8 +58,27 @@ The design includes a persistent crisis support button, skippable prompts, and t
 - [README](README.md)
 - [AGENTS.md](AGENTS.md)
 
-The documentation links, research mappings, and required interface controls were checked. The five mockups were also reviewed visually in a browser.
+The application was tested using automated tests, browser checks, and database inspection.
+
+* 47 backend tests passed.
+* 29 frontend tests passed.
+* Production frontend build succeeded.
+* Live OpenRouter recommendation and feedback requests succeeded.
+* SQLite persistence was verified after restarting the backend.
+* Paced Breathing completed in approximately 60 seconds.
+* Grounding was designed for approximately 70 seconds at the intended pace.
+* Mobile interface was checked at 390 × 844.
+
+Mocked model responses were used for routine automated testing, while selected fictional scenarios were tested using the live model.
+
+
+## **Changes from Part 3.1**
+One major change was replacing the STOP exercise with 5-4-3-2-1 Sensory Grounding. After testing the exercise, I felt STOP was more like a reading exercise rather than a grounding, mental health exercise. This contradicts one of the core design philophies of having minmal reading. Sensory grounding provides more interaction while keeping a simple design. I also expanded the AI integration by adding Help Me Choose, giving the model a more meaningful role without removing user control. 
+
+Paced breathing has also been changed to make it more interactive through a closed loop design.Instead of automatically starting when the exercise is opened, users now press and hold the breathing circle to begin. The exercise follows the same four-second inhale and six-second exhale pattern, but continues only while the button is held. Releasing the button pauses the exercise, and holding it again resumes from where the user stopped. This gives users more control over the exercise while allowing the application to detect their interaction. The intended exercise duration remains 60 seconds, but users can choose to continue longer or finish when they want.
 
 ## **Remaining Work**
 
-Part 3.1 focused on design, so no working functionality was implemented. Part 3.2 will focus on building the exercises, connecting the language model, saving data, and implementing crisis-support access. Part 3.3 will focus on improving personalization, adding a way to review saved history, and completing the required fictional scenario testing and demonstrations.
+Part 3.3 will focus on further refinement, reviewing saved history, and completing the required evaluation using at least fifteen fictional scenarios and three behavior checks.
+
+Current limitations include the possibility of interrupted sessions remaining marked as started and incomplete screen-reader and zoom accessibility testing.
