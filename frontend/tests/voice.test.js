@@ -4,6 +4,8 @@ import { createVoiceSession, CLOSE_WAIT_MS } from '../src/voiceSession.js'
 import { createVoiceAPI } from '../src/api.js'
 import { bindVoiceLifecycle } from '../src/voiceLifecycle.js'
 import { createFeedbackResponder } from '../src/feedbackResponse.js'
+import { createBreathingTimer } from '../src/exerciseTiming.js'
+import { GROUNDING_STEPS } from '../src/grounding.js'
 
 const deferred = () => { let resolve, reject; const promise = new Promise((yes, no) => { resolve = yes; reject = no }); return { promise, resolve, reject } }
 const flush = async () => { for (let i = 0; i < 20; i++) await Promise.resolve() }
@@ -391,4 +393,74 @@ test('fresh voice sessions send no instruction/start/update events and keep text
  await s.voice.start();assert.deepEqual(s.channel.sent,[])
  assert.equal(s.counts().postCalls,2)
  s.started();assert.equal(s.last().status,'active');s.dispose();s.released()
+})
+
+
+test('E11-M mocked ordinary conversation preserves exact fictional reply without claiming model quality', async () => {
+ const s=setup();await s.voice.start();s.started()
+ const input='Fictional example: I keep putting off a school assignment.'
+ const reply='Choose one small task and give it five minutes. You can decide what to do next.'
+ s.channel.message({type:'session.input_transcript.delta',delta:input,start_ms:0,end_ms:500})
+ s.channel.message({type:'session.output_transcript.delta',delta:reply,start_ms:600,end_ms:1500})
+ assert.deepEqual(s.last().transcripts.map(x=>x.text),[input,reply]);assert.equal(s.last().status,'active')
+ s.voice.stop();s.channel.message({type:'session.closed'});s.released()
+})
+test('E12-M mocked supported exercise suggestion is displayed and never auto-navigates', async () => {
+ const s=setup();await s.voice.start();s.started()
+ const reply='If you would like a steady cue, you can choose Paced Breathing from Home. Or we can keep talking.'
+ s.channel.message({type:'session.output_transcript.delta',delta:reply,start_ms:0,end_ms:1000})
+ assert.equal(s.last().transcripts[0].text,reply);assert.equal(s.last().status,'active')
+ assert.deepEqual(s.channel.sent,[]);s.dispose();s.released()
+})
+test('E13-M overlapping fictional interruption and refusal transcripts preserve user direction; End releases resources', async () => {
+ const s=setup();await s.voice.start();s.started()
+ s.channel.message({type:'session.output_transcript.delta',delta:'You could choose Paced Breathing.',start_ms:0,end_ms:2000})
+ s.channel.message({type:'session.input_transcript.delta',delta:'Actually, no exercise. Let us keep talking.',start_ms:1000,end_ms:1600})
+ s.channel.message({type:'session.output_transcript.delta',delta:'We can keep talking about one practical next step.',start_ms:2100,end_ms:3000})
+ assert.deepEqual(s.last().transcripts.map(t=>t.speaker),['Pause','You','Pause'])
+ assert.equal(s.last().status,'active');s.voice.stop();assert.equal(s.mic.track.stopped,true)
+ s.channel.message({type:'session.closed'});assert.equal(s.last().closure,'confirmed');s.released()
+})
+test('BC3 observed boundary: unknown exercise actions cannot alter timing/order; unsupported spoken text is unfiltered', async () => {
+ const s=setup();await s.voice.start();s.started();let frame
+ const timer=createBreathingTimer({now:()=>s.clock.now,schedule:fn=>{frame=fn;return 1},cancel:()=>{},onUpdate:()=>{}})
+ timer.resume();s.clock.tick(3999);frame();assert.equal(timer.snapshot().phase,'in')
+ const before=s.states.length
+ for(const type of ['exercise.start','exercise.configure','app.navigate','session.update'])s.channel.message({type,exercise_id:'unsupported_xyz',inhale_seconds:1,exhale_seconds:1,steps:['changed']})
+ assert.equal(s.states.length,before)
+ s.clock.tick(1);frame();assert.equal(timer.snapshot().phase,'out');assert.equal(timer.snapshot().seconds,6)
+ s.clock.tick(6000);frame();assert.equal(timer.snapshot().completedCycles,1)
+ assert.deepEqual(GROUNDING_STEPS.map(x=>[x.sense,x.count]),[['Sight',5],['Touch',4],['Hearing',3],['Smell',2],['Taste',1]])
+ const unsupported='Try Unsupported Exercise XYZ.'
+ s.channel.message({type:'session.output_transcript.delta',delta:unsupported,start_ms:0,end_ms:100})
+ assert.equal(s.last().transcripts[0].text,unsupported) // Observed limitation, not a successful content rejection.
+ timer.stop();s.dispose();s.released()
+})
+
+test('BC3 invalid voice actions cannot execute navigation, support removal or history retrieval', async () => {
+ const s=setup();await s.voice.start();s.started()
+ const before=s.states.length, counts=s.counts(), instructions=GROUNDING_STEPS.map(step=>step.instruction)
+ for(const payload of [
+  {type:'app.navigate',screen:'breathing',start:true},
+  {type:'crisis.remove'},
+  {type:'history.read',owner:'other-fictional-owner'},
+  {type:'response.function_call_arguments.done',name:'history.read',arguments:'{"owner":"other-fictional-owner"}'},
+  {type:'exercise.configure',steps:['unreviewed'],inhale_seconds:1},
+ ])s.channel.message(payload)
+ assert.equal(s.states.length,before)
+ assert.deepEqual(s.counts(),counts)
+ assert.deepEqual(GROUNDING_STEPS.map(step=>step.instruction),instructions)
+ assert.deepEqual(s.channel.sent,[])
+ assert.equal(s.last().status,'active')
+ s.dispose();s.released()
+})
+
+test('BC3 observed voice gap: unsupported exercise and professional-therapy claims pass transcript handling', async () => {
+ const s=setup();await s.voice.start();s.started()
+ const invalid=['Try Unsupported Exercise XYZ.','I provide professional therapy.']
+ for(const [index,delta] of invalid.entries())s.channel.message({type:'session.output_transcript.delta',delta,start_ms:index*1000,end_ms:index*1000+100})
+ assert.deepEqual(s.last().transcripts.map(item=>item.text),invalid)
+ // A passing regression assertion documents failed content rejection, not safety compliance.
+ assert.deepEqual(s.channel.sent,[])
+ s.dispose();s.released()
 })

@@ -1,0 +1,502 @@
+TAP version 13
+# Subtest: opening is idle; primary hold starts once and release/resume preserves active progress
+ok 1 - opening is idle; primary hold starts once and release/resume preserves active progress
+  ---
+  duration_ms: 0.537791
+  type: 'test'
+  ...
+# Subtest: cancellation/lost focus clears input ownership and late pointer/keyboard events cannot resume
+ok 2 - cancellation/lost focus clears input ownership and late pointer/keyboard events cannot resume
+  ---
+  duration_ms: 1.128167
+  type: 'test'
+  ...
+# Subtest: Space/Enter and accessible Start/Pause work without repeats or duplicate starts
+ok 3 - Space/Enter and accessible Start/Pause work without repeats or duplicate starts
+  ---
+  duration_ms: 0.111084
+  type: 'test'
+  ...
+# Subtest: Pause intent survives focus loss before an accessible button click
+ok 4 - Pause intent survives focus loss before an accessible button click
+  ---
+  duration_ms: 0.068375
+  type: 'test'
+  ...
+# Subtest: planned completion is a notice, optional cycles continue, explicit stop is terminal
+ok 5 - planned completion is a notice, optional cycles continue, explicit stop is terminal
+  ---
+  duration_ms: 0.38925
+  type: 'test'
+  ...
+# Subtest: first interaction, multiple pauses, early Finish and feedback create only one saved session
+ok 6 - first interaction, multiple pauses, early Finish and feedback create only one saved session
+  ---
+  duration_ms: 1.306917
+  type: 'test'
+  ...
+# Subtest: uses local calendar fields rather than a UTC date or 24h interval
+ok 7 - uses local calendar fields rather than a UTC date or 24h interval
+  ---
+  duration_ms: 0.417417
+  type: 'test'
+  ...
+# Subtest: dismissal survives reload and expires on next calendar day, not 24 hours
+ok 8 - dismissal survives reload and expires on next calendar day, not 24 hours
+  ---
+  duration_ms: 11.993333
+  type: 'test'
+  ...
+# Subtest: blocked storage permits dismissal in this visit without storing mood
+ok 9 - blocked storage permits dismissal in this visit without storing mood
+  ---
+  duration_ms: 0.123417
+  type: 'test'
+  ...
+# Subtest: date markers synchronize across instances and retain previously dismissed dates
+ok 10 - date markers synchronize across instances and retain previously dismissed dates
+  ---
+  duration_ms: 0.119917
+  type: 'test'
+  ...
+# Subtest: health client makes the one intended request and rejects failure/malformed status
+ok 11 - health client makes the one intended request and rejects failure/malformed status
+  ---
+  duration_ms: 0.380209
+  type: 'test'
+  ...
+# Subtest: 4-second inhale / 6-second exhale pattern continues beyond the six planned cycles
+ok 12 - 4-second inhale / 6-second exhale pattern continues beyond the six planned cycles
+  ---
+  duration_ms: 3.423791
+  type: 'test'
+  ...
+# Subtest: delayed frames use elapsed active time without drift, and pauses/stop invalidate late callbacks
+ok 13 - delayed frames use elapsed active time without drift, and pauses/stop invalidate late callbacks
+  ---
+  duration_ms: 1.144709
+  type: 'test'
+  ...
+# Subtest: exit before start response does not block and updates only the same session
+ok 14 - exit before start response does not block and updates only the same session
+  ---
+  duration_ms: 1.7305
+  type: 'test'
+  ...
+# Subtest: rapid feedback serializes without duplicate starts/ends and preserves last choice
+ok 15 - rapid feedback serializes without duplicate starts/ends and preserves last choice
+  ---
+  duration_ms: 0.411709
+  type: 'test'
+  ...
+# Subtest: failure stays unsaved without blocking; later choice can recover the same session
+ok 16 - failure stays unsaved without blocking; later choice can recover the same session
+  ---
+  duration_ms: 0.571458
+  type: 'test'
+  ...
+# Subtest: old acknowledgment cannot hide a pending newer feedback save
+ok 17 - old acknowledgment cannot hide a pending newer feedback save
+  ---
+  duration_ms: 0.3805
+  type: 'test'
+  ...
+# Subtest: pseudonymous identity survives reload; blocked storage supports this visit
+ok 18 - pseudonymous identity survives reload; blocked storage supports this visit
+  ---
+  duration_ms: 0.524625
+  type: 'test'
+  ...
+# Subtest: activity API sends correct identity/method/body and bounded requests, rejects failures
+ok 19 - activity API sends correct identity/method/body and bounded requests, rejects failures
+  ---
+  duration_ms: 0.852541
+  type: 'test'
+  ...
+# Subtest: Helpful and Not Helpful submit only fixed button context and label mock vs live
+ok 20 - Helpful and Not Helpful submit only fixed button context and label mock vs live
+  ---
+  duration_ms: 2.218416
+  type: 'test'
+  ...
+# Subtest: Skip is immediate, clears response, and never invokes provider API
+ok 21 - Skip is immediate, clears response, and never invokes provider API
+  ---
+  duration_ms: 0.093084
+  type: 'test'
+  ...
+# Subtest: duplicate pending or completed clicks share one exchange request
+ok 22 - duplicate pending or completed clicks share one exchange request
+  ---
+  duration_ms: 0.149334
+  type: 'test'
+  ...
+# Subtest: Skip and Home/cancel ignore late responses and abort pending fetch
+ok 23 - Skip and Home/cancel ignore late responses and abort pending fetch
+  ---
+  duration_ms: 0.34025
+  type: 'test'
+  ...
+# Subtest: failed save, timeout/error, invalid response, and backend unavailability use explicit static fallback
+ok 24 - failed save, timeout/error, invalid response, and backend unavailability use explicit static fallback
+  ---
+  duration_ms: 0.256083
+  type: 'test'
+  ...
+# Subtest: latest feedback wins the visible response even when an older request finishes later
+ok 25 - latest feedback wins the visible response even when an older request finishes later
+  ---
+  duration_ms: 0.117708
+  type: 'test'
+  ...
+# Subtest: enriched feedback adds local date while keeping context retrieval backend-owned
+ok 26 - enriched feedback adds local date while keeping context retrieval backend-owned
+  ---
+  duration_ms: 0.094375
+  type: 'test'
+  ...
+# Subtest: reviewed senses/counts/instructions are fixed and intended timing is70 seconds
+ok 27 - reviewed senses/counts/instructions are fixed and intended timing is70 seconds
+  ---
+  duration_ms: 0.618625
+  type: 'test'
+  ...
+# Subtest: noticing can be undone and earlier-step progress survives other-step changes
+ok 28 - noticing can be undone and earlier-step progress survives other-step changes
+  ---
+  duration_ms: 0.099042
+  type: 'test'
+  ...
+# Subtest: Grounding feedback uses correct context and duplicate-safe response controller
+ok 29 - Grounding feedback uses correct context and duplicate-safe response controller
+  ---
+  duration_ms: 0.19875
+  type: 'test'
+  ...
+# Subtest: history API uses scoped read-only GETs, bounded list parameter, no cache and no provider request
+ok 30 - history API uses scoped read-only GETs, bounded list parameter, no cache and no provider request
+  ---
+  duration_ms: 3.853375
+  type: 'test'
+  ...
+# Subtest: empty and saved lists have distinct ready states; details retain saved chronological order
+ok 31 - empty and saved lists have distinct ready states; details retain saved chronological order
+  ---
+  duration_ms: 3.638417
+  type: 'test'
+  ...
+# Subtest: backend failure, missing IDs and malformed data yield neutral retriable states
+ok 32 - backend failure, missing IDs and malformed data yield neutral retriable states
+  ---
+  duration_ms: 0.641208
+  type: 'test'
+  ...
+# Subtest: invalid conversation IDs never issue a read request
+ok 33 - invalid conversation IDs never issue a read request
+  ---
+  duration_ms: 0.210792
+  type: 'test'
+  ...
+# Subtest: Home/support/unmount disposal aborts pending history and ignores late reads
+ok 34 - Home/support/unmount disposal aborts pending history and ignores late reads
+  ---
+  duration_ms: 0.225541
+  type: 'test'
+  ...
+# Subtest: newer conversation selection and Back ignore old results without hiding saved lists
+ok 35 - newer conversation selection and Back ignore old results without hiding saved lists
+  ---
+  duration_ms: 0.3135
+  type: 'test'
+  ...
+# Subtest: personalization waits for writes, uses only returned completion, and can be absent
+ok 36 - personalization waits for writes, uses only returned completion, and can be absent
+  ---
+  duration_ms: 0.446917
+  type: 'test'
+  ...
+# Subtest: stale personalization cannot appear after departure or replace a newer read
+ok 37 - stale personalization cannot appear after departure or replace a newer read
+  ---
+  duration_ms: 0.396292
+  type: 'test'
+  ...
+# Subtest: durations distinguish missing, zero, short exits and separate active/wall measurements
+ok 38 - durations distinguish missing, zero, short exits and separate active/wall measurements
+  ---
+  duration_ms: 0.5
+  type: 'test'
+  ...
+# Subtest: nothing starts on mount; only explicit start connects, duplicates do not create another session
+ok 39 - nothing starts on mount; only explicit start connects, duplicates do not create another session
+  ---
+  duration_ms: 8.616917
+  type: 'test'
+  ...
+# Subtest: ICE gathering finishes before FastAPI receives the final local SDP
+ok 40 - ICE gathering finishes before FastAPI receives the final local SDP
+  ---
+  duration_ms: 1.893833
+  type: 'test'
+  ...
+# Subtest: session.started during remote answer application cannot prematurely show Active
+ok 41 - session.started during remote answer application cannot prematurely show Active
+  ---
+  duration_ms: 0.266917
+  type: 'test'
+  ...
+# Subtest: permission denial leaves text independent and allows an explicit new microphone attempt
+ok 42 - permission denial leaves text independent and allows an explicit new microphone attempt
+  ---
+  duration_ms: 0.310167
+  type: 'test'
+  ...
+# Subtest: unconfigured or failed API does not request microphone permission
+ok 43 - unconfigured or failed API does not request microphone permission
+  ---
+  duration_ms: 1.241833
+  type: 'test'
+  ...
+# Subtest: mute only disables outgoing microphone tracks and can be reversed
+ok 44 - mute only disables outgoing microphone tracks and can be reversed
+  ---
+  duration_ms: 0.643
+  type: 'test'
+  ...
+# Subtest: blocked autoplay exposes a gesture retry that calls play immediately
+ok 45 - blocked autoplay exposes a gesture retry that calls play immediately
+  ---
+  duration_ms: 0.22575
+  type: 'test'
+  ...
+# Subtest: late failed autoplay cannot overwrite a newer successful gesture
+ok 46 - late failed autoplay cannot overwrite a newer successful gesture
+  ---
+  duration_ms: 0.178792
+  type: 'test'
+  ...
+# Subtest: End stops capture immediately, waits briefly, then releases resources and sends only session.close
+ok 47 - End stops capture immediately, waits briefly, then releases resources and sends only session.close
+  ---
+  duration_ms: 0.231958
+  type: 'test'
+  ...
+# Subtest: cancel during permission releases late microphone tracks without creating a peer
+ok 48 - cancel during permission releases late microphone tracks without creating a peer
+  ---
+  duration_ms: 0.568375
+  type: 'test'
+  ...
+# Subtest: dispose keeps in-flight SDP observable and hangs up a late answer without reactivating
+ok 49 - dispose keeps in-flight SDP observable and hangs up a late answer without reactivating
+  ---
+  duration_ms: 0.273541
+  type: 'test'
+  ...
+# Subtest: ICE timeout cleans up, never POSTs, and cannot resume on late ICE
+ok 50 - ICE timeout cleans up, never POSTs, and cannot resume on late ICE
+  ---
+  duration_ms: 0.138416
+  type: 'test'
+  ...
+# Subtest: permission and session.started watchdogs are finite and release late resources
+ok 51 - permission and session.started watchdogs are finite and release late resources
+  ---
+  duration_ms: 0.160625
+  type: 'test'
+  ...
+# Subtest: configured duration closes even a muted session and clears timers
+ok 52 - configured duration closes even a muted session and clears timers
+  ---
+  duration_ms: 0.130375
+  type: 'test'
+  ...
+# Subtest: provider, malformed-event, mismatched-session, peer and data-channel failures are sanitized
+ok 53 - provider, malformed-event, mismatched-session, peer and data-channel failures are sanitized
+  ---
+  duration_ms: 1.15975
+  type: 'test'
+  ...
+# Subtest: timed transcripts preserve exact deltas, interval ordering and overlap without invented turns
+ok 54 - timed transcripts preserve exact deltas, interval ordering and overlap without invented turns
+  ---
+  duration_ms: 0.521958
+  type: 'test'
+  ...
+# Subtest: disconnect while closing reports incomplete finalization
+ok 55 - disconnect while closing reports incomplete finalization
+  ---
+  duration_ms: 0.271625
+  type: 'test'
+  ...
+# Subtest: session HTTP failure has no retries and releases the microphone
+ok 56 - session HTTP failure has no retries and releases the microphone
+  ---
+  duration_ms: 0.278
+  type: 'test'
+  ...
+# Subtest: voice API sends only SDP to FastAPI and projects validated response fields
+ok 57 - voice API sends only SDP to FastAPI and projects validated response fields
+  ---
+  duration_ms: 0.801917
+  type: 'test'
+  ...
+# Subtest: voice API rejects unavailable/malformed responses without echoing provider details
+ok 58 - voice API rejects unavailable/malformed responses without echoing provider details
+  ---
+  duration_ms: 0.662708
+  type: 'test'
+  ...
+# Subtest: session.closed acknowledges End early; no HTTP fallback or duplicate End command
+ok 59 - session.closed acknowledges End early; no HTTP fallback or duplicate End command
+  ---
+  duration_ms: 0.843167
+  type: 'test'
+  ...
+# Subtest: duplicate Start during Closing and repeated End do not extend the deadline or duplicate work
+ok 60 - duplicate Start during Closing and repeated End do not extend the deadline or duplicate work
+  ---
+  duration_ms: 0.144291
+  type: 'test'
+  ...
+# Subtest: late SDP after End requests hangup exactly once without applying the answer or restoring Active
+ok 61 - late SDP after End requests hangup exactly once without applying the answer or restoring Active
+  ---
+  duration_ms: 0.127209
+  type: 'test'
+  ...
+# Subtest: late answer while End is still waiting cannot reactivate and does not cause duplicate fallback
+ok 62 - late answer while End is still waiting cannot reactivate and does not cause duplicate fallback
+  ---
+  duration_ms: 0.116333
+  type: 'test'
+  ...
+# Subtest: a late old result cannot change a new active session or its audio
+ok 63 - a late old result cannot change a new active session or its audio
+  ---
+  duration_ms: 0.171584
+  type: 'test'
+  ...
+# Subtest: hangup failure preserves local cleanup and reports unconfirmed closure without provider details
+ok 64 - hangup failure preserves local cleanup and reports unconfirmed closure without provider details
+  ---
+  duration_ms: 0.115333
+  type: 'test'
+  ...
+# Subtest: each new conversation uses fresh microphone/peer/channel and no retained conversation state
+ok 65 - each new conversation uses fresh microphone/peer/channel and no retained conversation state
+  ---
+  duration_ms: 0.136459
+  type: 'test'
+  ...
+# Subtest: unmount stops capture immediately and cleans the bounded closing session
+ok 66 - unmount stops capture immediately and cleans the bounded closing session
+  ---
+  duration_ms: 0.162083
+  type: 'test'
+  ...
+# Subtest: navigation stops capture immediately and cleans the bounded closing session
+ok 67 - navigation stops capture immediately and cleans the bounded closing session
+  ---
+  duration_ms: 0.110375
+  type: 'test'
+  ...
+# Subtest: crisis stops capture immediately and cleans the bounded closing session
+ok 68 - crisis stops capture immediately and cleans the bounded closing session
+  ---
+  duration_ms: 0.118708
+  type: 'test'
+  ...
+# Subtest: page exit stops capture immediately and cleans the bounded closing session
+ok 69 - page exit stops capture immediately and cleans the bounded closing session
+  ---
+  duration_ms: 0.103833
+  type: 'test'
+  ...
+# Subtest: hidden stops capture immediately and cleans the bounded closing session
+ok 70 - hidden stops capture immediately and cleans the bounded closing session
+  ---
+  duration_ms: 0.112084
+  type: 'test'
+  ...
+# Subtest: duration stops capture immediately and cleans the bounded closing session
+ok 71 - duration stops capture immediately and cleans the bounded closing session
+  ---
+  duration_ms: 0.088583
+  type: 'test'
+  ...
+# Subtest: hangup HTTP request survives page exit, sends only the ID and never exposes credentials
+ok 72 - hangup HTTP request survives page exit, sends only the ID and never exposes credentials
+  ---
+  duration_ms: 0.133917
+  type: 'test'
+  ...
+# Subtest: existing text feedback remains usable after voice configuration, denial or provider failure
+ok 73 - existing text feedback remains usable after voice configuration, denial or provider failure
+  ---
+  duration_ms: 0.384292
+  type: 'test'
+  ...
+# Subtest: diagnostic trace covers minimal offer/answer/start/connection/mute/close without raw data
+ok 74 - diagnostic trace covers minimal offer/answer/start/connection/mute/close without raw data
+  ---
+  duration_ms: 0.528041
+  type: 'test'
+  ...
+# Subtest: diagnostic failures cannot break the voice lifecycle
+ok 75 - diagnostic failures cannot break the voice lifecycle
+  ---
+  duration_ms: 0.14925
+  type: 'test'
+  ...
+# Subtest: fresh voice sessions send no instruction/start/update events and keep text source paths separate
+ok 76 - fresh voice sessions send no instruction/start/update events and keep text source paths separate
+  ---
+  duration_ms: 0.104125
+  type: 'test'
+  ...
+# Subtest: E11-M mocked ordinary conversation preserves exact fictional reply without claiming model quality
+ok 77 - E11-M mocked ordinary conversation preserves exact fictional reply without claiming model quality
+  ---
+  duration_ms: 0.082958
+  type: 'test'
+  ...
+# Subtest: E12-M mocked supported exercise suggestion is displayed and never auto-navigates
+ok 78 - E12-M mocked supported exercise suggestion is displayed and never auto-navigates
+  ---
+  duration_ms: 0.287208
+  type: 'test'
+  ...
+# Subtest: E13-M overlapping fictional interruption and refusal transcripts preserve user direction; End releases resources
+ok 79 - E13-M overlapping fictional interruption and refusal transcripts preserve user direction; End releases resources
+  ---
+  duration_ms: 0.081917
+  type: 'test'
+  ...
+# Subtest: BC3 observed boundary: unknown exercise actions cannot alter timing/order; unsupported spoken text is unfiltered
+ok 80 - BC3 observed boundary: unknown exercise actions cannot alter timing/order; unsupported spoken text is unfiltered
+  ---
+  duration_ms: 0.237458
+  type: 'test'
+  ...
+# Subtest: BC3 invalid voice actions cannot execute navigation, support removal or history retrieval
+ok 81 - BC3 invalid voice actions cannot execute navigation, support removal or history retrieval
+  ---
+  duration_ms: 0.091958
+  type: 'test'
+  ...
+# Subtest: BC3 observed voice gap: unsupported exercise and professional-therapy claims pass transcript handling
+ok 82 - BC3 observed voice gap: unsupported exercise and professional-therapy claims pass transcript handling
+  ---
+  duration_ms: 0.081125
+  type: 'test'
+  ...
+1..82
+# tests 82
+# suites 0
+# pass 82
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 105.237459

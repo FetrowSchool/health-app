@@ -4,6 +4,8 @@ import SafetyHeader from './components/SafetyHeader.vue'
 import MoodDialog from './components/MoodDialog.vue'
 import HomeScreen from './components/HomeScreen.vue'
 import ConversationScreen from './components/ConversationScreen.vue'
+import HistoryScreen from './components/HistoryScreen.vue'
+import { createRecentExerciseReader, exerciseNames } from './history.js'
 import BreathingScreen from './components/BreathingScreen.vue'
 import GroundingScreen from './components/GroundingScreen.vue'
 import CompletionScreen from './components/CompletionScreen.vue'
@@ -17,6 +19,8 @@ import { createActivityAPI, getHealth } from './api.js'
 const checkIn = createDailyCheckIn()
 const activityAPI = createActivityAPI(applicationIdentity())
 const screen = ref('home')
+const recentExercise = ref(null)
+const recentReader = createRecentExerciseReader({ api: activityAPI, onValue: value => { recentExercise.value = value } })
 const conversationScreen = ref(null)
 const breathingScreen = ref(null)
 const moodOpen = ref(!checkIn.isDismissed())
@@ -71,14 +75,22 @@ function goHome() {
   if (screen.value === 'completion' && !current.value?.feedback) chooseFeedback('skipped')
   current.value?.responder?.cancel()
   screen.value = 'home'
+  recentReader.load(current.value?.recorder?.settled())
   checkDay()
   focusHeading()
 }
+function openHistory() {
+  recentReader.cancel()
+  screen.value = 'history'
+  focusHeading()
+}
 function openConversation() {
+  recentReader.cancel()
   screen.value = 'conversation'
   focusHeading()
 }
 function choose(exercise) {
+  recentReader.cancel()
   conversationScreen.value?.endVoice()
   current.value = reactive({ id: crypto.randomUUID(), exercise, recorder: null, terminal: null, feedback: '', saveState: '', startClock: null, startedAt: null, duration: null, responder: null, response: { status: 'idle', text: '', label: '' } })
   entryClock = performance.now()
@@ -111,6 +123,7 @@ function complete() {
   focusHeading()
 }
 function openSupport() {
+  recentReader.cancel()
   conversationScreen.value?.endVoice()
   if (moodOpen.value) dismissMood()
   returnToCompletion.value = screen.value === 'completion'
@@ -120,7 +133,7 @@ function openSupport() {
 }
 function closeSupport() {
   screen.value = returnToCompletion.value ? 'completion' : 'home'
-  if (screen.value === 'home') checkDay()
+  if (screen.value === 'home') { checkDay(); recentReader.load() }
   focusHeading()
 }
 function checkDay() {
@@ -141,6 +154,7 @@ function leavingPage() {
   if (screen.value === 'breathing' || screen.value === 'grounding') endExercise('exited')
 }
 onMounted(async () => {
+  recentReader.load()
   window.addEventListener('focus', checkDay)
   window.addEventListener('storage', checkDay)
   window.addEventListener('pagehide', leavingPage)
@@ -153,6 +167,7 @@ onMounted(async () => {
   }
 })
 onUnmounted(() => {
+  recentReader.cancel()
   window.removeEventListener('focus', checkDay)
   window.removeEventListener('storage', checkDay)
   window.removeEventListener('pagehide', leavingPage)
@@ -163,7 +178,8 @@ onUnmounted(() => {
   <div class="app-shell">
     <SafetyHeader :active="screen === 'crisis'" @support="openSupport" />
     <main>
-      <HomeScreen v-if="screen === 'home'" @choose="choose" @conversation="openConversation" />
+      <HomeScreen v-if="screen === 'home'" @choose="choose" :recent-exercise="exerciseNames[recentExercise]" @conversation="openConversation" @history="openHistory" />
+      <HistoryScreen v-else-if="screen === 'history'" :api="activityAPI" @home="goHome" />
       <ConversationScreen v-else-if="screen === 'conversation'" ref="conversationScreen" @home="goHome" />
       <BreathingScreen v-else-if="screen === 'breathing'" ref="breathingScreen" @started="instructionStarted" @exit="goHome" @complete="complete" />
       <GroundingScreen v-else-if="screen === 'grounding'" @started="instructionStarted" @exit="goHome" @finish="complete" />

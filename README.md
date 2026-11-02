@@ -1,27 +1,42 @@
-# Pause — Assignment 3.2 interactive skills
+# Pause — Assignment 3.3 integration and verification
 
 Pause is a local mental health skills **coursework prototype**, not a mental health support service. It does not diagnose, provide therapy, claim clinical effectiveness, or imply human monitoring. Testing uses fictional scenarios only.
 
+Latest verification (November2, 2026): fresh dependency/runtime setup of the current working-tree snapshot passed95 backend tests,85 frontend tests and the production build. Both exercises, mock feedback, History/restart persistence and offline support were reviewed in the real clean app. One separately approved GPT-Live connection succeeded and closed with confirmation; scripted conversational quality, full screen-reader/zoom testing and voice content-boundary failures remain unresolved. Current History/evaluation files are uncommitted and absent from plain HEAD. See the [complete evidence and readiness limits](docs/evidence/part-3-3-clean/index.md).
+
 ## Current milestone and chosen direction
 
-Paced Breathing now uses **hold to run, release to pause**. Opening is idle; the first hold or accessible Start begins one session. Four-second inhale/six-second exhale phases accumulate active time across pauses. Six cycles (60 active seconds) are the planned portion; Finish is always the explicit completion action after starting, and optional continuation never auto-ends. Exit records an exited session. Button interaction does not measure respiration. Home now opens the existing voice conversation directly through **Stop to chat — Ai assistant conversation** (the reviewed browser labels). The page is titled **Talk to Pause**. The predefined Help Me Choose questionnaire has been retired. Grounding and contextual post-exercise text feedback are preserved. No History UI or model-proposed SQL RAG is implemented. See the [hold-to-run evidence](docs/evidence/part-3-2-hold-breathing/index.md).
+Paced Breathing now uses **hold to run, release to pause**. Opening is idle; the first hold or accessible Start begins one session. Four-second inhale/six-second exhale phases accumulate active time across pauses. Six cycles (60 active seconds) are the planned portion; Finish is always the explicit completion action after starting, and optional continuation never auto-ends. Exit records an exited session. Button interaction does not measure respiration. Home now opens the existing voice conversation directly through **Stop to chat — Ai assistant conversation** (the reviewed browser labels). The page is titled **Talk to Pause**. The predefined Help Me Choose questionnaire has been retired. Grounding and contextual post-exercise text feedback are preserved. Read-only History and a lightweight recently-completed exercise label are now available; model-proposed SQL RAG remains a separate capability. See the [hold-to-run evidence](docs/evidence/part-3-2-hold-breathing/index.md).
 
 - Skills: paced breathing, a planned six 4-second inhale / 6-second exhale cycles (60 active seconds, optional continuation), and five sensory Grounding steps (Sight 5, Touch 4, Hearing 3, Smell 2, Taste 1), with an intended 70-second path and no forced timer.
 - Journey: optional once-per-local-day mood popup → home → direct exercise or optional conversation → manually selected exercise → optional completion feedback → home. Skip, immediate Exit, and independent crisis information preserve control. Normal use requires no typing or account.
 - Interface: one action at a time, light neutral colors, muted blue, large labeled controls, visible focus, generous spacing, and reduced motion.
-- Personalization: minimal prior activity can label a recently used card. Stable order is the default; optional mood/activity ordering is documented as a changeable alternative, never an automatic exercise selection or restriction.
+- Personalization: Home optionally shows “Recently used” for the most recently completed supported exercise. It uses completion time, ignores exited/unfinished sessions and preserves both exercise cards and their order. No preferences, mood inference or provider call is required.
 - AI: the voice assistant can discuss everyday practical next steps and optionally suggest either existing exercise; the user navigates manually. Separately, short post-exercise text responses use feedback plus optional saved mood and up to three recent supported exercise records. Code owns instructions and timing. Future SQL-based RAG remains a separate assignment capability requiring a reviewed contract before implementation.
 - Tradeoffs: daily prompts still add friction, persistent safety consumes space, and minimal tracking limits personalization. The research mapping explains alternatives and reasons.
 
+## Saved History — current Part 3.3 increment
+
+Open **History** from Home for up to20 recent exercises and20 saved text conversations, newest first. Sessions show date, completed/exited/unfinished state, measured duration and optional feedback. Breathing’s active and total time remain separate; older rows can lack an active summary. Durations round to0.1s. Open a conversation to read its actual saved messages in chronological saved order, with dates and truthful mock/live source. Failed conversations retain only messages actually saved. Generic list previews avoid copying message/mood text. Voice audio/transcripts are not saved or included.
+
+Read-only `GET /api/history?limit=20` accepts1–50 and requires the existing `X-App-ID` UUID; Home uses limit1 for its optional recent label. Scoped `GET /api/conversations/{id}` is reused for details. No schema change, account, model call, preference setting or write occurs on a History read. Empty/unavailable/detail-failure states preserve Return Home and independent Crisis Support; navigation never waits for a request. Home refreshes after pending session saves settle. Clearing browser storage changes the local identity, so it cannot recover the prior identity’s history; this identifier is scoping, not authentication.
+
+See [History evidence](docs/evidence/part-3-3-history/index.md), [API/read contract](docs/design-pipeline.md) and [verification](docs/verification.md). Existing exercises, daily check-in, AI/text feedback, voice configuration/lifecycle and crisis controls are preserved. The [Part3.3 evaluation](docs/part-3-evaluation.md) now records26 scenarios and three behavior checks, with [mock/browser/database evidence](docs/evidence/part-3-3-evaluation/index.md). Live conversational scoring and full accessibility/demonstration work remain incomplete; unsupported spoken suggestions are not filtered. No report.md changes, new paid calls, commits or pushes.
+
 ## Review documents
 
-- [Design specification](docs/design.md): five screens, timing, AI, data, personalization, safety, and unresolved questions.
+- [Submission checklist](docs/submission-checklist.md): actual repository URL, final-commit/recording placeholders, evidence links, tracking review and limitations.
+- [AI-use disclosure](AI-USE.md) and [curated development evidence](docs/ai-development-log.md): actual tools/model identifiers, configured-versus-live distinction and failed/revised approaches.
+- [Design specification](docs/design.md): current views, timing, AI, data, personalization, safety, and unresolved questions; original five-screen previews are preserved as history.
 - [Research-to-design mapping](docs/research-decisions.md): R1–R4 and D1–D6, feature choices, reasons, alternatives, and limitations.
 - [User flow](docs/user-flow.md): Mermaid navigation, interruptions, and optional response states.
 - [Earlier Grounding-stage mockups](docs/mockups/grounding.html): static five-screen previews before Help Me Choose; current implementation evidence is in verification notes.
 - [Original Part 3.1 STOP gallery](docs/mockups/index.html) and [original specification](docs/history/part-3-1-design.md): preserved design history.
 - [Part 3.2 submission evidence](docs/evidence/part-3-2-final/index.md): eight required views, additional failure/loading captures, selected fictional SQLite records, and measured timing. Open this index in a Markdown viewer; screenshot links open locally.
-- [Verification record](docs/verification.md): Part 3.1 evidence plus actual Part 3.2 tests/browser checks.
+- [Verification record](docs/verification.md): dated Part 3.1–3.3 tests, browser/database observations and unresolved checks.
+- [Three explicit behavior checks](docs/evaluation/behavior-checks.md): fresh Part3.3 support, user-control and invalid-model-response tests, with failures and untested live conditions distinguished.
+- [Scenario and clean-run verification](docs/evaluation/scenarios.md) and [complete evidence](docs/evidence/part-3-3-clean/index.md): fresh dependency install,95 backend/85 frontend tests/build, actual browser/database checks and one separately approved GPT-Live connection. The tested current working-tree snapshot includes uncommitted History/evaluation files absent from plain HEAD; no automatic commit was made.
+- [Application demonstration outline](docs/demo/application-demo.md): ten-feature walkthrough, fictional voice script, scoped SQLite view and recording checklist. [Development process screencast](docs/demo/process-screencast.md): documented voice failure, evidence/limits and the press-and-hold code explanation. These are preparation materials; recordings and actual accessible viewer links still need to be created manually.
 - [Foundation contracts](docs/design-pipeline.md): implemented responsibilities, health API, local data, and stage-specific behavior.
 - [Development instructions](AGENTS.md) and [current handoff](handoffs/current.md).
 
@@ -40,7 +55,7 @@ docs/               Specifications, research mapping, flow, verification, mockup
 backend/tests/     API/provider/migration tests with temporary fictional databases
 frontend/tests/    Node tests for timing, persistence, source labels and request state
 tests/              Earlier placeholder, preserved
-prompts/            Future curated instructions
+prompts/            Preserved staged assistant-instruction drafts; runtime prompts are server-owned
 handoffs/           Current state and next step
 ```
 
@@ -50,7 +65,7 @@ Existing Expedia Lite patterns are identified in the research mapping and founda
 
 Run these commands from the repository root unless noted. Verified environment: Python 3.13.15, Node 24.20.0, npm 11.19.0. Vite requires Node `^22.18.0 || >=24.12.0`.
 
-Backend setup (project-local packages; already installed in this workspace):
+For a fresh checkout, create a project-local environment and install the declared dependencies. Keep API credentials and any existing database out of a clean-verification copy. No `backend/.env` is needed for mock mode. Use a shell without inherited `MODEL_*`, `VOICE_*` or `OPENAI_API_KEY` settings when verifying defaults; process environment overrides file/default settings.
 
 ```sh
 python3 -m venv backend/.venv
@@ -63,7 +78,7 @@ Runtime requirements are FastAPI, Uvicorn, python-dotenv, and HTTPX; development
 backend/.venv/bin/python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000
 ```
 
-The lifespan initializer transactionally upgrades `data/app.sqlite3` to schema version 6, adding activity and conversation/message tables if missing. It preserves previous rows; no sensitive fixtures are seeded. Actual exercise/mood/feedback actions now save records scoped to a random local application UUID. If startup cannot initialize the file, the backend fails rather than claiming readiness.
+The lifespan initializer creates the data directory/database when absent and transactionally upgrades `data/app.sqlite3` to schema version 7, adding activity and conversation/message tables if missing. It preserves previous rows; no activity fixtures are seeded. Actual exercise/mood/feedback actions save records scoped to a random local application UUID. If startup cannot initialize the file, the backend fails rather than claiming readiness.
 
 Frontend setup in terminal 2:
 
@@ -72,6 +87,8 @@ cd frontend
 npm install
 npm run dev
 ```
+
+If another copy already uses8000/5173, stop that copy's server processes before these startup commands; keep its files/database intact and restart it afterward. A second frontend connected to the first copy's backend would not verify an isolated checkout. Use the optional production preview on4173 below for a separate browser-storage origin during review.
 
 Open [Pause locally](http://127.0.0.1:5173). Vue requests `/api/health` through Vite’s proxy to port 8000, with a three-second timeout. A small status indicator reports readiness/failure; it never gates navigation. Use `127.0.0.1` consistently: `localhost` and `127.0.0.1` are separate browser-storage origins. The health indicator checks once per page load; reload after restarting the backend to refresh it.
 
@@ -92,7 +109,7 @@ npm run build
 
 For an optional local production-build preview, run `npm run preview` from `frontend/` and open `http://127.0.0.1:4173`. This origin has its own daily check-in marker. The built app’s health request works through Vite preview’s proxy; production hosting/API routing is not configured by this task.
 
-Direct health endpoint: [GET /api/health](http://127.0.0.1:8000/api/health). Expected HTTP 200 JSON: `{"status":"ok","database":"ready","model_configured":false}` when no key is configured. An unavailable database after startup returns HTTP 503 with a neutral detail. `model_configured` means only that a nonblank backend setting exists, never that a provider call succeeded. API docs are at `http://127.0.0.1:8000/docs`. Session start/end/feedback, daily-mood, POST /api/feedback-response and scoped GET /api/conversations/{id} endpoints exist. See [API contracts](docs/design-pipeline.md) for payloads, idempotency, scope, and failure responses.
+Direct health endpoint: [GET /api/health](http://127.0.0.1:8000/api/health). Expected HTTP 200 JSON: `{"status":"ok","database":"ready","model_configured":false}` when no key is configured. An unavailable database after startup returns HTTP 503 with a neutral detail. `model_configured` means only that a nonblank backend setting exists, never that a provider call succeeded. API docs are at `http://127.0.0.1:8000/docs`. Session start/end/feedback, daily-mood, GET /api/history, POST /api/feedback-response and scoped GET /api/conversations/{id} endpoints exist. See [API contracts](docs/design-pipeline.md) for payloads, idempotency, scope, and failure responses.
 
 ### Provider configuration
 
@@ -100,11 +117,13 @@ No key is needed for the default `MODEL_PROVIDER=mock`. Helpful/Not Helpful show
 
 For live use, create your own ignored `backend/.env` using [backend/.env.example](backend/.env.example) as a reference; never overwrite an existing environment file. Set `MODEL_PROVIDER=live`, `MODEL_API_KEY` to a valid private key, `MODEL_NAME` to the provider's model identifier, and `MODEL_ENDPOINT` to its complete HTTPS chat-completions-compatible endpoint. The adapter sends bearer authorization and model/messages/max_tokens/temperature JSON; provider-specific APIs may need a new adapter. Do not paste keys into source, Vue, screenshots, Git, or frontend environment variables. Restart FastAPI after settings change. Process environment takes precedence over backend/.env. CORS_ORIGINS retains the exact comma-separated local-origin override.
 
-Live mode with incomplete configuration fails explicitly; it does not silently substitute a mock. Health reports key presence only, not complete configuration or successful provider access. The provider has a finite total deadline (MODEL_TIMEOUT_SECONDS: 1–25 seconds; code default 4, verified local configuration 25), bounded HTTP response size, no redirects/tools, and no database access. Generation uses only fixed selection/feedback, an optional saved mood, and at most three recent supported exercise summaries (type, completed/exited status, optional feedback). IDs, dates/timestamps, durations, circle taps, free text and full history are excluded. Code accepts only reviewed neutral completion responses (maximum 240 characters / 40 words), or a supported structured suggestion with a matching reviewed short reason; all other output becomes an explicitly labeled static fallback. This deliberately limits conversational variety. Three controlled live requests were made during the follow-up: the first safely timed out at the original four-second limit; Not Helpful and Helpful subsequently succeeded after matching the earlier project’s reasoning setting and allowing 25 seconds. Routine tests remain mocked. Free-tier availability and latency can vary; no automatic provider retries are enabled.
+Live text mode with incomplete configuration fails explicitly; it does not silently substitute a mock. Health reports key presence only, not complete configuration or provider success. Text calls have a finite total deadline (MODEL_TIMEOUT_SECONDS:1–25 seconds; code default4, historical verified setting25), bounded response size, no redirects/tools or direct database access. Context includes fixed feedback, optional saved mood and at most3 scoped exercise summaries; no IDs/timestamps/durations/circle taps/free text/full history. The backend accepts only reviewed catalog text (≤240characters/40words); invalid output becomes an explicitly labeled static fallback. Structured recommendations belong to the retired Help Me Choose creation flow; saved historical results remain readable. This catalog does not filter arbitrary voice transcripts/audio. Routine tests use mocks; provider availability can vary and no automatic retries are enabled.
+
+**Historical October19 text-provider notes:** one early four-second timeout was followed by accepted Not Helpful/Helpful requests after the recorded provider-setting/timeout refinement. These are earlier live observations, not a newly repeated test or a guarantee of current availability.
 
 The inspected Expedia Lite project at `../Assignment 1` uses **OpenRouter**, endpoint `https://openrouter.ai/api/v1/chat/completions`, model **`nvidia/nemotron-3-ultra-550b-a55b:free`**. Its root .env supplies OPENROUTER_API_KEY; OPENROUTER_MODEL is optional and absent locally, so the source default above is the effective identifier. Pause maps that credential to MODEL_API_KEY and the effective identifier to MODEL_NAME; unrelated Expedia keys/data are not copied. FastAPI uses HTTPX bearer-authenticated POST requests; python-dotenv loads configuration. No additional provider SDK or package install is needed. The API format is described in the [OpenRouter reference](https://openrouter.ai/docs/api_reference/overview).
 
-The existing local backend/.env is now configured for live mode with owner-only permissions and excluded from Git. Do not overwrite or print it. Required settings are MODEL_PROVIDER=live, private MODEL_API_KEY, MODEL_NAME, and MODEL_ENDPOINT. Set MODEL_TIMEOUT_SECONDS=25 for the verified configuration. OpenRouter requests disable reasoning, matching Expedia Lite; other compatible endpoints receive no provider-specific reasoning parameter. The response HTTP wait in Vue is bounded at 28 seconds; ordinary activity requests remain three seconds, and Home/Crisis never wait for generation.
+At that historical checkpoint, local backend/.env selected live text mode with owner-only permissions and Git exclusion. Do not overwrite or print an existing environment file. Live text settings are MODEL_PROVIDER=live, private MODEL_API_KEY, MODEL_NAME and MODEL_ENDPOINT;25s was the verified timeout. OpenRouter requests disable reasoning; other compatible endpoints receive no provider-specific reasoning parameter. Vue's feedback wait is bounded at28s; ordinary activity requests remain3s and Home/Crisis never wait for generation. A fresh checkout without credentials defaults to mock; inspect your actual process rather than assuming a historical mode.
 
 To switch back to deterministic testing, change only MODEL_PROVIDER=mock in backend/.env and restart FastAPI using the startup command above. To re-enable live mode, change it to live and restart. An alternative one-run mock command from the root is:
 
@@ -112,7 +131,7 @@ To switch back to deterministic testing, change only MODEL_PROVIDER=mock in back
 MODEL_PROVIDER=mock backend/.venv/bin/python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000
 ```
 
-Stop the existing server first to avoid a port conflict. Tests inject their own mock settings/providers and never need the real key. See [live verification](docs/verification.md) and the [live response screenshot](docs/evidence/part-3-2-live/live-response-390x844.jpg). Local services remain in live mode after this check; selecting new Helpful/Not Helpful feedback can send a real provider request.
+Stop the existing server first to avoid a port conflict. Tests inject mock settings/providers and never need a real key. See [historical live verification](docs/verification.md) and the [earlier response screenshot](docs/evidence/part-3-2-live/live-response-390x844.jpg). Selecting Helpful/Not Helpful on a live-configured process can send a real request; saved historical rows do not determine the current process mode.
 
 ### What this stage saves
 
@@ -132,7 +151,7 @@ GroundingScreen.vue and grounding.js replace the active StopScreen.vue. API iden
 
 Verified 35 backend tests, 23 frontend tests, production build, all five senses/counts, tap/undo, keyboard focus, optional progression, Back preservation, Exit and support from every step, saved/mock exchanges and history preservation. Paced Breathing completed unchanged in 60.015 seconds. See the Grounding entry in [verification](docs/verification.md) and [running Grounding screenshot](docs/evidence/part-3-2-grounding/sight-390x844.jpg).
 
-The Grounding verification originally left a `MODEL_PROVIDER=mock` process override running even though backend/.env selected live. The subsequent feedback investigation removed that override and verified one new live Grounding exchange with correct source labeling and persistence. **The current backend runs in live mode.** Existing saved mock/failed exchanges remain unchanged; test a new completed session to request a new exchange rather than relabeling history.
+Historical provider-selection finding: the Grounding verification left a `MODEL_PROVIDER=mock` process override even though saved settings selected live. The subsequent investigation removed it and verified one new live Grounding exchange with accurate labeling/persistence. This is dated evidence, not a fresh runtime check. Never relabel saved mock/failed exchanges as live or create a new call merely to check service health.
 
 If demo output appears unexpectedly, stop the backend, remove any inherited provider override, and restart from the project root:
 
@@ -158,7 +177,7 @@ This stage implements exercises, local activity/conversation persistence, and op
 
 The baseline assignment also requires SQL-based RAG: FastAPI requests a retrieval query, validates a single read-only statement with table/field and current-profile/conversation restrictions, bounds query time/results/context, then supplies relevant records and reviewed content in a second model call. The model never connects to SQLite. Writes remain separate, parameterized backend operations. Count both provider calls; use finite timeouts and reject untrusted SQL beyond a superficial SELECT check. This is a later integration plan, not an implemented feature or a required wait during exercises/ordinary history browsing. Its exact milestone and relationship to short completion feedback remain open for instructor confirmation.
 
-Part 3.3 retains the required saved conversation-history and session table/timeline review plan. Display message IDs/order/time and session duration/completed/exited status via FastAPI, compare with SQLite after refresh/restart, and never infer clinical improvement from activity. Failed requests create no fabricated replies; failed writes cannot look saved; retries must not duplicate records. Configure and inspect services only in a later authorized implementation task. Figma/MCP capture and Vue revision are later tasks; static mockups are not editable Figma captures.
+Part 3.3 includes bounded read-only History and the documented scenario/behavior/clean-setup evaluations. Retention/deletion, full assistive-technology/zoom review and scored live conversational scenarios remain unfinished. Actual History IDs/messages/durations/status were compared across SQLite/API/browser and restart; activity never establishes clinical improvement. Failed requests create no fabricated replies; failed writes cannot look saved. Figma/MCP capture and Vue revision remain later tasks; static mockups are not editable Figma captures.
 
 R1–R4 and D1–D6 are attributed to the instructor-provided Assignment 3 study summary; no external study citations or clinical-effectiveness claims are made. The initial crisis-information route will display U.S.-specific 988 details, explicitly limited to the United States and its territories; official resource sources and the October 15, 2026 check are recorded in the design and verification notes. Rendered mobile mockup review remains pending because the preview browser blocks local file URLs. Confirm course-specific bibliography formatting if required. The Stage 3 request supersedes the earlier documentation-only and Stage 2 boundaries. Stop for review before further features; no automatic commits or pushes. report.md is preserved.
 
@@ -179,6 +198,8 @@ States are Permission, Connecting, Active, Muted, Closing, Closed and Error. Act
 
 The full assistant's authoritative prompt configuration is [backend/app/voice_session.json](backend/app/voice_session.json): `instructions` for GPT-Live-1 and `delegation.responses.instructions` for the separate reasoning model. The personality-delivery correction adds these two fields to the earlier exact handoff; model gpt-live-1, voice gleam, delegated gpt-6-luna, reasoning and tools remain unchanged. Live is instructed to offer one concrete everyday suggestion when useful, optionally recommend either existing exercise, and ask one focused question only when needed. The backend gets its own scope/context/safety policy. Staged prompts/01 and02 and historical voice_prompts.py are references, not runtime inputs. No database context or navigation tool is supplied to voice; Crisis Support remains independent.
 
+Delegated `gpt-6-luna` and its web-search tool are **configured**, but the saved live evidence does not confirm an actual delegated Responses/tool invocation. Do not list Luna as live-tested use. [AI-USE.md](AI-USE.md) separates these states from the confirmed `gpt-live-1` connection.
+
 FastAPI snapshots this JSON at process startup. After editing it, **restart FastAPI and end/restart any existing voice session**: an open provider session keeps its original instructions. The frontend sends SDP only, never startup instructions or session.update. With `VOICE_DIAGNOSTICS=1`, the server terminal logs `voice_prompt phase=loaded` and, for a deliberately started request, `phase=outgoing`, with source filename, instruction hashes, character counts and inclusion flags. The hashes should match; raw prompts/SDP/audio/conversations/keys are not logged or returned to Vue. No paid request is needed to see the loaded fingerprint. Use normal Pause at `/` for personality testing; `/voice-diagnostic.html` deliberately retains its short no-advice transport-test prompt.
 
 GET /api/voice/config returns only status and duration_seconds. Privately supply OPENAI_API_KEY in ignored backend/.env; it is never exposed to Vue or reused from OpenRouter. The normal voice session does not use VOICE_LIVE_MODEL; VOICE_BACKEND_MODEL is now a legacy ignored setting for this voice session: the reviewed JSON fixes gpt-6-luna. Existing text-provider configuration is unchanged. VOICE_SESSION_DURATION_SECONDS defaults to60 (1–300); VOICE_PROVIDER_TIMEOUT_SECONDS defaults to10 (0.1–25), with no retries. Restart FastAPI after server configuration/code changes. Configured status does not prove account/model access. For local diagnosis only, start FastAPI with `VOICE_DIAGNOSTICS=1` to log fixed stage/status/category values without provider text or secrets; this never creates a session by itself.
@@ -191,7 +212,7 @@ Focused mocked checks from the project root: `backend/.venv/bin/python -m unitte
 
 Frontend mocked voice checks: `cd frontend` then `node --test tests/voice.test.js`. `npm test` includes all frontend regression checks. `npm run build -- --configLoader native` builds using the installed Node/Vite configuration loader. These tests fake MediaDevices, RTCPeerConnection, audio, timers and the FastAPI responses; they never request real microphone access or make paid calls. The browser needs HTTPS or localhost for real microphone use. Real audio/device/provider verification remains a separate authorized task.
 
-For one deliberately started live conversation, follow the [under-60-second manual checklist](docs/verification.md#manual-live-check-not-run). The later October26 failure investigation restarted the stale backend: /api/voice/config now returns200/unconfigured instead of404. The earlier investigation found OPENAI_API_KEY missing; privately supply it in the existing ignored backend/.env, restart, and require configured status before attempting live voice. No paid call was made. The manual plan uses a45-second process-only duration override and mock text mode, preserving saved settings and preventing an extra live text call; it includes interruption, mute/unmute, End and microphone-release observations. See [actual failure evidence](docs/verification.md#actual-voice-failure-investigation) for the separate pending microphone-only diagnostic and remaining limits.
+For a future intentionally approved live take, see the [demo script](docs/demo/application-demo.md). The [older manual checklist](docs/verification.md#manual-live-check-not-run) and [failure investigation](docs/verification.md#actual-voice-failure-investigation) preserve October26's stale-backend/missing-key/microphone observations; their unconfigured/pending wording is historical. November2's separate approved connection succeeded, as linked in the latest evidence; semantic live scenarios remain unscored. Configuration/health checks are not session creation, and earlier one-attempt approval does not authorize another paid test.
 
 
 ### Isolated GPT-Live diagnostic (no paid request on load)

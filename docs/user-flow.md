@@ -1,6 +1,8 @@
 # Current user flow — interactive skills
 
-The original screen types plus direct AI conversation are shown; five Grounding states belong to one screen type. Crisis information is an independently accessible auxiliary route. Saved-history review is reserved for Part 3.3 and is not in this diagram. See [design](design.md) for exact behavior and [research decisions](research-decisions.md) for rationale.
+The original screen types plus direct AI conversation are shown; five Grounding states belong to one screen type. Crisis information is an independently accessible auxiliary route. Part3.3 adds read-only History and a saved-message detail state. See [design](design.md) for exact behavior and [research decisions](research-decisions.md) for rationale.
+
+This is the current flow; STOP and the Help Me Choose questionnaire are retired, with only historical records/artifacts retained. State arrows describe app behavior, not a guarantee of live semantic quality. [Verification](verification.md) and [behavior checks](evaluation/behavior-checks.md) distinguish observed, mocked and unscored/failed conditions.
 
 ```mermaid
 flowchart TD
@@ -11,6 +13,13 @@ flowchart TD
     Mood -->|Skip / close / Escape| Home
     Home -->|One tap| Breath[Paced Breathing: idle, hold or accessible Start]
     Home -->|One tap| S1[Grounding 1: Sight — 5 things]
+    Home -->|History: independent read| History[Recent exercises and saved text conversations]
+    History -->|Open saved conversation| Saved[Messages in saved chronological order]
+    Saved -->|Back to History| History
+    History -->|Return Home including loading/error| Home
+    Saved -->|Return Home including loading/error| Home
+    History -->|Crisis Support including failures| Crisis
+    Saved -->|Crisis Support including failures| Crisis
     Home -->|Stop to chat| Chat[Talk to Pause: voice closed, no automatic request]
     Chat -->|Select microphone| Voice[Permission / Connecting / Active / Muted / Closing / Closed / Error]
     Voice -->|Interruption / Mute / End| Voice
@@ -56,7 +65,7 @@ flowchart TD
     Response -->|Return home immediately| Home
     Mood -->|Crisis support: dismiss as Skip| Crisis[Static crisis-support information]
     Home -->|Crisis support| Crisis
-    Breath -->|Crisis support: interrupt session| Crisis
+    Breath -->|Crisis support before start: no session record| Crisis
     S1 -->|Crisis support: interrupt session| Crisis
     S2 -->|Crisis support: interrupt session| Crisis
     S3 -->|Crisis support: interrupt session| Crisis
@@ -70,12 +79,15 @@ flowchart TD
     Return --> Done
 ```
 
-Feedback and response nodes are states of the same completion screen, not additional screens. Restoring completion preserves selected feedback and approved text; it does not automatically issue another model request. A saved return-state token determines the crisis route's return destination.
+Feedback and response nodes are states of the same completion screen, not additional screens. Restoring completion preserves selected feedback and approved text; it does not automatically issue another model request. Application state determines the crisis route's return destination.
 
-Every exercise Exit is immediate and records exited status if persistence is available. Crisis access records an active exercise as exited and never resumes it automatically. Opening crisis information from the mood dialog records a daily Skip. Crisis resources remain visible if any save/model request fails; no arrow waits for an AI response or successful database write. Daily dismissal uses browser-local date state first and SQLite later. Model failures use neutral static UI copy while home and crisis buttons stay enabled; they do not create a model-reply record. Feedback/model nodes describe the visible state, not guaranteed database persistence. A failed save is shown as unsaved; no arrow waits on a successful write. Stable card order remains default; any optional ordering changes neither available exercise nor navigation. Breathing has no automatic completion:60 active seconds triggers a planned-complete notice, while Finish records completed and Exit records exited. Opening/ready Exit creates no record.
+Every exercise Exit is immediate and records exited status if persistence is available. Crisis access records an active exercise as exited and never resumes it automatically. Opening crisis information from the mood dialog records a daily Skip. Crisis resources remain visible if any save/model request fails; no arrow waits for an AI response or successful database write. Daily dismissal uses browser-local date state first and SQLite later. Model failures use neutral static UI copy while home and crisis buttons stay enabled; they do not create a model-reply record. Feedback/model nodes describe the visible state, not guaranteed database persistence. A failed save is shown as unsaved; no arrow waits on a successful write. Card order remains fixed; the optional Recently used label is based on the latest supported completion. No reordering/reset preference is implemented. Breathing has no automatic completion:60 active seconds triggers a planned-complete notice, while Finish records completed and Exit records exited. Opening/ready Exit creates no record.
 
 Grounding circles toggle noticed/unnoticed; Back retains all in-exercise taps and Continue never requires them. Fifth Continue completes; no step advances automatically.70-second intended pace, actual duration/setup saved separately, no90-second forced deadline. Historical STOP is absent from selection but saved rows remain; the [original flow](history/part-3-1-user-flow.md) is preserved.
 
 Conversation is optional and never gates exercise access. The assistant may suggest a supported exercise conversationally, but the user returns Home and selects it manually. No AI navigation tool or focus questionnaire exists. Voice starts only after microphone selection, remains transient and ends through existing cleanup on departure. The existing post-exercise text feedback remains; there is no typed-chat composer in this increment. Historical recommendation records remain readable, while the old creation route is removed.
 
 Breathing release/cancel/focus loss pauses active time without resetting progress or duplicating the session. Hidden-page pauses; page departure attempts an exited save. Finish may be early or after optional continuation. Planned60s, active, optional continuation, total wall time and setup are distinct; none measures actual respiration. Native Start/Pause and reduced motion remain available; all navigation remains independent of saving.
+
+
+Home’s optional recent label is a read of the last completed supported exercise, not an AI/navigation node. It does not change card order or require interaction. History limits20 records per section; its list, empty, loading and error states never block navigation. Details reuse scoped saved-conversation reads; no new generation occurs. Voice audio/transcripts are absent. Returning from support entered via History goes Home; opening History again refreshes.

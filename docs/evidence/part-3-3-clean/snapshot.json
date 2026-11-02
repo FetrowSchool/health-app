@@ -1,0 +1,12 @@
+{
+  "base_commit": "48f912d1936142e230ae427f8592c616a6b7c6bf",
+  "method": "Local --no-hardlinks clone, then current non-ignored working files overlaid; not a claim that uncommitted work is published",
+  "files_copied": 236,
+  "ignored_or_sensitive_paths_rejected": [],
+  "plain_HEAD_missing_current_features": [
+    "frontend/src/components/HistoryScreen.vue",
+    "backend/app/routes/history.py",
+    "docs/evaluation/behavior-checks.md"
+  ],
+  "credentials_database_dependencies_build_output_absent_before_setup": true
+}

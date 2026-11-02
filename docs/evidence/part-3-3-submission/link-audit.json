@@ -1,0 +1,10 @@
+{
+  "date": "2026-11-02",
+  "method": "Repository-wide Markdown inline relative file/heading-anchor audit, including read-only report.md; excludes generated/dependency directories and external URI availability",
+  "markdownFiles": 28,
+  "relativeLinks": 473,
+  "markdownAnchors": 15,
+  "missing": [],
+  "badAnchors": [],
+  "nonPortableRelativeLinks": []
+}

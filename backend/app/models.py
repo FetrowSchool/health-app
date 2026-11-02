@@ -131,3 +131,31 @@ class ConversationResponse(BaseModel):
     context_used: dict = Field(default_factory=dict)
     recommendation: RecommendationResult | None = None
 
+
+
+class ExerciseHistoryItem(BaseModel):
+    id: UUID
+    exercise_type: Literal['paced_breathing', 'stop', 'grounding_54321']
+    started_at: AwareDatetime
+    ended_at: AwareDatetime | None
+    status: Literal['started', 'completed', 'exited']
+    duration_seconds: float | None
+    active_duration_seconds: float | None
+    feedback: Literal['helpful', 'not_helpful', 'skipped'] | None
+
+
+class ConversationHistoryItem(BaseModel):
+    id: UUID
+    created_at: AwareDatetime
+    kind: Literal['feedback', 'recommendation']
+    status: Literal['pending', 'succeeded', 'failed']
+    exercise_type: Literal['paced_breathing', 'stop', 'grounding_54321'] | None
+    feedback: Literal['helpful', 'not_helpful'] | None
+    provider_mode: Literal['mock', 'live']
+    preview: str
+
+
+class HistoryResponse(BaseModel):
+    sessions: list[ExerciseHistoryItem]
+    conversations: list[ConversationHistoryItem]
+    recent_completed_exercise: Literal['paced_breathing', 'grounding_54321'] | None

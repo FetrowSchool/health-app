@@ -10,6 +10,7 @@ from .routes.conversations import router as conversation_router
 from .providers import build_provider, FeedbackProvider
 from .voice_provider import VoiceProvider
 from .routes.voice import router as voice_router
+from .routes.history import router as history_router
 
 
 def create_app(settings: Settings | None = None, provider: FeedbackProvider | None = None, *, voice_transport=None) -> FastAPI:
@@ -35,6 +36,7 @@ def create_app(settings: Settings | None = None, provider: FeedbackProvider | No
     app.include_router(activity_router)
     app.include_router(conversation_router)
     app.include_router(voice_router)
+    app.include_router(history_router)
     return app
 
 

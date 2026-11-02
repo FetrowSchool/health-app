@@ -1,0 +1,38 @@
+{
+  "method": "Private SHA256 and read-only full-row/schema comparison; no private values or credential hashes exported",
+  "protected_files": 56,
+  "protected_unchanged": true,
+  "unexpected_changes": [],
+  "original_rows_preserved": {
+    "app_metadata": true,
+    "daily_mood_checkins": true,
+    "messages": true,
+    "exercise_sessions": true,
+    "conversations": true
+  },
+  "original_counts": {
+    "app_metadata": {
+      "before": 1,
+      "after": 1
+    },
+    "daily_mood_checkins": {
+      "before": 15,
+      "after": 15
+    },
+    "messages": {
+      "before": 67,
+      "after": 67
+    },
+    "exercise_sessions": {
+      "before": 73,
+      "after": 73
+    },
+    "conversations": {
+      "before": 36,
+      "after": 36
+    }
+  },
+  "schema_unchanged": true,
+  "foreign_key_check_empty": true,
+  "voice_audio_transcripts_added_to_app_database": false
+}

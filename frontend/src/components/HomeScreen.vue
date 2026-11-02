@@ -1,6 +1,7 @@
 <script setup>
 import SkillIcon from './SkillIcon.vue'
-defineEmits(['choose', 'conversation'])
+defineProps({ recentExercise: { type: String, default: '' } })
+defineEmits(['choose', 'conversation', 'history'])
 </script>
 <template>
   <section class="home-content" aria-labelledby="screen-heading">
@@ -24,5 +25,7 @@ defineEmits(['choose', 'conversation'])
         <span class="arrow" aria-hidden="true">↗</span>
       </button>
     </div>
+    <p v-if="recentExercise" class="recent-exercise" role="status">Recently used: {{ recentExercise }}</p>
+    <button type="button" class="secondary wide history-link" @click="$emit('history')">History</button>
   </section>
 </template>

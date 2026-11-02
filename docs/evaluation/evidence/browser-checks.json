@@ -1,0 +1,82 @@
+{
+  "date": "2026-11-02",
+  "method": "Fresh actual Vue browser interaction at390x844 using existing explicit test harness; fake microphone/WebRTC/voice API, deterministic text provider, isolated fictional SQLite. No model/audio/microphone claim.",
+  "observations": [
+    {
+      "id": "BC2-skip",
+      "expected": "Skip without choosing mood or waiting for save",
+      "observed": "Home opened with both direct exercise cards; unavailable backend save reported honestly."
+    },
+    {
+      "id": "BC1-Home",
+      "observed": "Support opened from Home."
+    },
+    {
+      "id": "BC1-backend-unavailable",
+      "observed": "Support opened with Backend unavailable and failed mood save, before isolated8190 listener was available; no contact links activated."
+    },
+    {
+      "id": "BC2-pause",
+      "observed": "2200ms hold starts; release pauses atActive0:02.",
+      "unchangedDuringInspection": true
+    },
+    {
+      "id": "BC2-resume",
+      "observed": "Second2100ms hold resumes from0:02 to0:04/exhale6 seconds."
+    },
+    {
+      "id": "BC1-breathing",
+      "observed": "Clicked Crisis Support from started/paused Breathing; support opened immediately."
+    },
+    {
+      "id": "BC2-direct-exercises",
+      "observed": "Selected Breathing and Grounding directly from Home without AI."
+    },
+    {
+      "id": "BC2-grounding-skip",
+      "observed": "Sight0/5 Continue reached Touch0/4; no counter/disclosure required."
+    },
+    {
+      "id": "BC1-grounding",
+      "observed": "Clicked support from Touch step; local route opened."
+    },
+    {
+      "id": "BC2-exit",
+      "observed": "Explicit Exit from idle Breathing and started Grounding immediately returned Home. Started Breathing was also left immediately via support; unit recorder tests cover in-flight/failed saves."
+    },
+    {
+      "id": "BC1-history",
+      "observed": "Clicked support from loaded History with saved exited sessions; route opened."
+    },
+    {
+      "id": "BC1-loading",
+      "observed": "Clicked Crisis Support during simulated Connecting (2-second mock creation delay); support opened without waiting for answer."
+    },
+    {
+      "id": "BC2-home-loading",
+      "observed": "Return Home during simulated Connecting immediately opened Home."
+    },
+    {
+      "id": "BC2-decline",
+      "observed": "Scripted supported suggestion and fictional refusal displayed while remaining in conversation; no auto-navigation. Real model response to refusal not tested."
+    },
+    {
+      "id": "BC2-end",
+      "observed": "End reached Closed and mock session.closed; fake microphone stopped.",
+      "mockMicrophoneStopped": "true"
+    },
+    {
+      "id": "BC1-conversation",
+      "observed": "Support opened from simulated Active voice; fake microphone stopped.",
+      "mockMicrophoneStopped": "true"
+    },
+    {
+      "id": "BC2-home-failure",
+      "observed": "Return Home clicked after mocked voice503/Error; Home and both direct cards opened."
+    },
+    {
+      "id": "BC1-model-failure",
+      "observed": "After second mocked503/Error, clicked Crisis Support; support opened independently."
+    }
+  ]
+}

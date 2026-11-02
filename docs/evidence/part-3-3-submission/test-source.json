@@ -1,0 +1,7 @@
+{
+  "method": "Current production/test/dependency files compared byte-for-byte with existing credential-free validation checkout; dependencies already installed by earlier clean-setup task",
+  "filesCompared": 85,
+  "synchronizedFiles": [],
+  "envAbsent": true,
+  "newInstallation": false
+}

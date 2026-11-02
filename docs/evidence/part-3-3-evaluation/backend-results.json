@@ -1,0 +1,467 @@
+{
+  "method": "Fresh deterministic backend tests; temporary fictional databases and mocked provider transports",
+  "tests_run": 92,
+  "successful": true,
+  "records": [
+    {
+      "test_id": "test_activity.ActivityTests.test_completed_status_end_and_duration_are_immutable",
+      "result": "PASS",
+      "seconds": 10.225029
+    },
+    {
+      "test_id": "test_activity.ActivityTests.test_concurrent_duplicate_start_and_conflicting_terminal_requests",
+      "result": "PASS",
+      "seconds": 0.020601
+    },
+    {
+      "test_id": "test_activity.ActivityTests.test_daily_mood_first_wins_scoped_and_no_duplicates",
+      "result": "PASS",
+      "seconds": 0.012332
+    },
+    {
+      "test_id": "test_activity.ActivityTests.test_exiting_updates_existing_and_cannot_be_changed_to_completed",
+      "result": "PASS",
+      "seconds": 0.011124
+    },
+    {
+      "test_id": "test_activity.ActivityTests.test_feedback_is_scoped_to_correct_session_and_intentional_changes",
+      "result": "PASS",
+      "seconds": 0.026302
+    },
+    {
+      "test_id": "test_activity.ActivityTests.test_manual_stop_allows_short_or_long_duration_without_deadline",
+      "result": "PASS",
+      "seconds": 0.01595
+    },
+    {
+      "test_id": "test_activity.ActivityTests.test_rejects_incomplete_breathing_bad_timestamps_and_duration",
+      "result": "PASS",
+      "seconds": 0.015169
+    },
+    {
+      "test_id": "test_activity.ActivityTests.test_sessions_and_mood_survive_new_application_instance",
+      "result": "PASS",
+      "seconds": 0.022817
+    },
+    {
+      "test_id": "test_activity.ActivityTests.test_start_complete_feedback_are_one_record_and_idempotent",
+      "result": "PASS",
+      "seconds": 0.024566
+    },
+    {
+      "test_id": "test_activity.ActivityTests.test_upgrade_preserves_old_metadata",
+      "result": "PASS",
+      "seconds": 0.006377
+    },
+    {
+      "test_id": "test_activity.ActivityTests.test_validation_scope_and_database_failure",
+      "result": "PASS",
+      "seconds": 0.009561
+    },
+    {
+      "test_id": "test_breathing_hold.HoldBreathingTests.test_early_finish_pauses_one_record_feedback_and_restart",
+      "result": "PASS",
+      "seconds": 0.019641
+    },
+    {
+      "test_id": "test_breathing_hold.HoldBreathingTests.test_optional_continuation_has_uncapped_cycles_and_exit_is_distinct",
+      "result": "PASS",
+      "seconds": 0.015534
+    },
+    {
+      "test_id": "test_breathing_hold.HoldBreathingTests.test_partial_inconsistent_wrong_skill_and_nonfinite_summaries_reject",
+      "result": "PASS",
+      "seconds": 0.021253
+    },
+    {
+      "test_id": "test_breathing_hold.HoldBreathingTests.test_v6_migration_preserves_legacy_values_and_related_records",
+      "result": "PASS",
+      "seconds": 0.012145
+    },
+    {
+      "test_id": "test_breathing_interaction.BreathingInteractionTests.test_each_mode_persists_optional_summary_and_survives_restart",
+      "result": "PASS",
+      "seconds": 0.042497
+    },
+    {
+      "test_id": "test_breathing_interaction.BreathingInteractionTests.test_exit_summary_immutable_and_scoped",
+      "result": "PASS",
+      "seconds": 0.010758
+    },
+    {
+      "test_id": "test_breathing_interaction.BreathingInteractionTests.test_invalid_partial_fabricated_or_wrong_skill_metrics_reject",
+      "result": "PASS",
+      "seconds": 0.022302
+    },
+    {
+      "test_id": "test_breathing_interaction.BreathingInteractionTests.test_legacy_clients_and_grounding_keep_null_metrics",
+      "result": "PASS",
+      "seconds": 0.017156
+    },
+    {
+      "test_id": "test_breathing_interaction.BreathingInteractionTests.test_v5_migration_preserves_every_old_column_and_is_idempotent",
+      "result": "PASS",
+      "seconds": 0.015353
+    },
+    {
+      "test_id": "test_conversation_compatibility.ConversationCompatibilityTests.test_historical_recommendation_remains_scoped_readable_and_unchanged_after_restart",
+      "result": "PASS",
+      "seconds": 0.013792
+    },
+    {
+      "test_id": "test_conversation_compatibility.ConversationCompatibilityTests.test_retired_creation_route_is_absent_and_cannot_write_or_generate",
+      "result": "PASS",
+      "seconds": 0.027434
+    },
+    {
+      "test_id": "test_conversation_compatibility.ConversationCompatibilityTests.test_shared_feedback_keeps_bounded_scoped_context_and_other_exercise_copy",
+      "result": "PASS",
+      "seconds": 0.028773
+    },
+    {
+      "test_id": "test_conversation_compatibility.ConversationCompatibilityTests.test_shared_live_feedback_adapter_keeps_its_mocked_http_contract",
+      "result": "PASS",
+      "seconds": 0.003989
+    },
+    {
+      "test_id": "test_conversation_compatibility.ConversationCompatibilityTests.test_v4_migration_preserves_every_old_field_and_relationship",
+      "result": "PASS",
+      "seconds": 0.008901
+    },
+    {
+      "test_id": "test_conversations.ConversationTests.test_concurrent_duplicate_responds_pending_and_calls_provider_once",
+      "result": "PASS",
+      "seconds": 0.116995
+    },
+    {
+      "test_id": "test_conversations.ConversationTests.test_database_failure_is_unsaved_and_never_returns_an_unstored_reply",
+      "result": "PASS",
+      "seconds": 0.013646
+    },
+    {
+      "test_id": "test_conversations.ConversationTests.test_helpful_and_not_helpful_have_scoped_ordered_saved_messages",
+      "result": "PASS",
+      "seconds": 0.017985
+    },
+    {
+      "test_id": "test_conversations.ConversationTests.test_invalid_unsafe_or_action_outputs_are_not_displayed_or_persisted",
+      "result": "PASS",
+      "seconds": 0.038555
+    },
+    {
+      "test_id": "test_conversations.ConversationTests.test_missing_live_credentials_is_explicit_failure_not_mock_success",
+      "result": "PASS",
+      "seconds": 0.017432
+    },
+    {
+      "test_id": "test_conversations.ConversationTests.test_provider_error_does_not_leak_details",
+      "result": "PASS",
+      "seconds": 0.015001
+    },
+    {
+      "test_id": "test_conversations.ConversationTests.test_rejects_free_text_crisis_scenarios_skip_and_wrong_context_without_provider",
+      "result": "PASS",
+      "seconds": 0.023525
+    },
+    {
+      "test_id": "test_conversations.ConversationTests.test_repeated_ids_and_new_ids_same_button_deduplicate",
+      "result": "PASS",
+      "seconds": 0.015441
+    },
+    {
+      "test_id": "test_conversations.ConversationTests.test_restart_keeps_messages_order_and_marks_abandoned_pending_failed",
+      "result": "PASS",
+      "seconds": 0.01684
+    },
+    {
+      "test_id": "test_conversations.ConversationTests.test_timeout_is_bounded_failure_and_does_not_invent_assistant",
+      "result": "PASS",
+      "seconds": 0.220663
+    },
+    {
+      "test_id": "test_conversations.LiveAdapterTests.test_mock_http_transport_sends_only_reviewed_context_and_no_tools",
+      "result": "PASS",
+      "seconds": 0.004416
+    },
+    {
+      "test_id": "test_conversations.LiveAdapterTests.test_mock_transport_rejects_http_errors_tools_and_malformed_results",
+      "result": "PASS",
+      "seconds": 0.00159
+    },
+    {
+      "test_id": "test_conversations.OpenRouterCompatibilityTests.test_openrouter_disables_reasoning_and_keeps_fixed_context",
+      "result": "PASS",
+      "seconds": 0.000943
+    },
+    {
+      "test_id": "test_conversations.OpenRouterCompatibilityTests.test_timeout_configuration_is_finite_and_bounded",
+      "result": "PASS",
+      "seconds": 0.00245
+    },
+    {
+      "test_id": "test_foundation.FoundationTests.test_configuration_presence_does_not_expose_key",
+      "result": "PASS",
+      "seconds": 0.011914
+    },
+    {
+      "test_id": "test_foundation.FoundationTests.test_cors_allows_only_expected_origin",
+      "result": "PASS",
+      "seconds": 0.011075
+    },
+    {
+      "test_id": "test_foundation.FoundationTests.test_database_path_is_project_relative",
+      "result": "PASS",
+      "seconds": 0.000335
+    },
+    {
+      "test_id": "test_foundation.FoundationTests.test_health_initialization_and_no_personal_records",
+      "result": "PASS",
+      "seconds": 0.008573
+    },
+    {
+      "test_id": "test_foundation.FoundationTests.test_restart_preserves_metadata_without_duplicates",
+      "result": "PASS",
+      "seconds": 0.015796
+    },
+    {
+      "test_id": "test_foundation.FoundationTests.test_unavailable_database_is_honest_and_not_recreated",
+      "result": "PASS",
+      "seconds": 0.009475
+    },
+    {
+      "test_id": "test_grounding.GroundingMigrationTests.test_invalid_legacy_relationship_rolls_back_migration",
+      "result": "PASS",
+      "seconds": 0.01112
+    },
+    {
+      "test_id": "test_grounding.GroundingMigrationTests.test_v3_history_and_relationships_preserved_repeated_migration",
+      "result": "PASS",
+      "seconds": 0.006018
+    },
+    {
+      "test_id": "test_grounding.GroundingTests.test_grounding_complete_mock_feedback_order_duplicates_and_restart",
+      "result": "PASS",
+      "seconds": 0.031194
+    },
+    {
+      "test_id": "test_grounding.GroundingTests.test_grounding_exit_and_optional_skipped_steps_have_no_minimum_or_deadline",
+      "result": "PASS",
+      "seconds": 0.021562
+    },
+    {
+      "test_id": "test_history.HistoryTests.test_durations_started_and_new_active_summary_are_truthful",
+      "result": "PASS",
+      "seconds": 0.009085
+    },
+    {
+      "test_id": "test_history.HistoryTests.test_empty_and_projected_scope_newest_first_bound_no_private_previews",
+      "result": "PASS",
+      "seconds": 0.01064
+    },
+    {
+      "test_id": "test_history.HistoryTests.test_failed_pending_and_historical_messages_keep_saved_order_and_scope",
+      "result": "PASS",
+      "seconds": 0.014173
+    },
+    {
+      "test_id": "test_history.HistoryTests.test_limits_identity_missing_database_are_validated_sanitized",
+      "result": "PASS",
+      "seconds": 0.011887
+    },
+    {
+      "test_id": "test_history.HistoryTests.test_personalization_uses_latest_completion_not_last_entry_exit_or_other_owner",
+      "result": "PASS",
+      "seconds": 0.01209
+    },
+    {
+      "test_id": "test_history.HistoryTests.test_reads_and_restart_preserve_every_row_and_read_connection_rejects_write",
+      "result": "PASS",
+      "seconds": 0.0161
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_browser_configuration_and_invented_owner_are_rejected",
+      "result": "PASS",
+      "seconds": 0.019766
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_byte_limits_reject_ascii_and_unicode_sdp",
+      "result": "PASS",
+      "seconds": 0.007339
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_close_preserves_database_records_and_registry_capacity_is_bounded",
+      "result": "PASS",
+      "seconds": 0.009897
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_concurrent_hangups_share_one_upstream_request",
+      "result": "PASS",
+      "seconds": 0.01808
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_config_reports_only_status_and_duration_without_provider_call",
+      "result": "PASS",
+      "seconds": 0.006912
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_development_diagnostics_are_opt_in_and_never_log_provider_text",
+      "result": "PASS",
+      "seconds": 0.012836
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_diagnostics_distinguish_transport_timeout_and_invalid_answer",
+      "result": "PASS",
+      "seconds": 0.008708
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_disconnected_creation_response_is_hung_up_without_returning_sdp",
+      "result": "PASS",
+      "seconds": 0.007018
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_distinctive_prompt_reaches_outgoing_request_and_reload_requires_new_provider",
+      "result": "PASS",
+      "seconds": 0.014541
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_duration_is_server_owned_and_configuration_is_bounded",
+      "result": "PASS",
+      "seconds": 0.010728
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_env_names_load_without_changing_existing_file_or_text_settings",
+      "result": "PASS",
+      "seconds": 0.003126
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_existing_health_contract_remains_unchanged",
+      "result": "PASS",
+      "seconds": 0.003303
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_hangup_errors_are_sanitized_and_never_retried_even_on_repeated_end",
+      "result": "PASS",
+      "seconds": 0.00777
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_hangup_only_issued_id_is_server_owned_bounded_and_idempotent",
+      "result": "PASS",
+      "seconds": 0.007864
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_hangup_timeout_still_returns_finite_sanitized_failure",
+      "result": "PASS",
+      "seconds": 0.111072
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_http_provider_errors_do_not_leak_or_retry",
+      "result": "PASS",
+      "seconds": 0.018961
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_invalid_key_is_unconfigured_not_echoed",
+      "result": "PASS",
+      "seconds": 0.009814
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_invalid_sdp_and_invalid_body_types_are_sanitized",
+      "result": "PASS",
+      "seconds": 0.018932
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_json_syntax_duplicates_and_media_type_are_sanitized",
+      "result": "PASS",
+      "seconds": 0.009471
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_legacy_backend_model_does_not_override_exact_session_config",
+      "result": "PASS",
+      "seconds": 0.015757
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_malformed_non_json_duplicate_and_oversized_provider_responses",
+      "result": "PASS",
+      "seconds": 0.010426
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_malformed_provider_shapes_and_opaque_ids_rejected",
+      "result": "PASS",
+      "seconds": 0.01586
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_missing_key_does_not_reuse_text_provider_key_or_make_call",
+      "result": "PASS",
+      "seconds": 0.010346
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_no_profile_or_owner_required_and_no_database_writes",
+      "result": "PASS",
+      "seconds": 0.00682
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_opaque_issued_id_is_url_encoded_not_interpolated_as_a_path",
+      "result": "PASS",
+      "seconds": 0.007519
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_prompt_fingerprints_are_opt_in_match_actual_payload_and_never_log_text",
+      "result": "PASS",
+      "seconds": 0.013589
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_request_bound_enforced_for_chunked_or_false_length",
+      "result": "PASS",
+      "seconds": 0.006873
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_success_sends_full_config_with_separate_prompt_layers_and_projects_response",
+      "result": "PASS",
+      "seconds": 0.007436
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_total_deadline_bounds_even_a_slow_transport",
+      "result": "PASS",
+      "seconds": 0.108969
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_transport_error_and_timeout_are_sanitized_without_retry",
+      "result": "PASS",
+      "seconds": 0.016311
+    },
+    {
+      "test_id": "test_voice.VoiceTests.test_unknown_expired_and_invalid_close_ids_never_call_provider",
+      "result": "PASS",
+      "seconds": 0.018953
+    },
+    {
+      "test_id": "test_voice_diagnostic.VoiceDiagnosticTests.test_bad_answer_and_auth_failure_remain_sanitized",
+      "result": "PASS",
+      "seconds": 0.006869
+    },
+    {
+      "test_id": "test_voice_diagnostic.VoiceDiagnosticTests.test_connect_write_pool_and_os_timeouts_are_distinct_without_raw_errors",
+      "result": "PASS",
+      "seconds": 0.008854
+    },
+    {
+      "test_id": "test_voice_diagnostic.VoiceDiagnosticTests.test_database_free_minimal_round_trip_and_close_preserve_contract",
+      "result": "PASS",
+      "seconds": 0.00639
+    },
+    {
+      "test_id": "test_voice_diagnostic.VoiceDiagnosticTests.test_diagnostic_model_is_exact_and_has_no_provider_substitution",
+      "result": "PASS",
+      "seconds": 0.000375
+    },
+    {
+      "test_id": "test_voice_diagnostic.VoiceDiagnosticTests.test_unconfigured_and_browser_configuration_reject_without_upstream_request",
+      "result": "PASS",
+      "seconds": 0.003994
+    },
+    {
+      "test_id": "test_voice_diagnostic.VoiceDiagnosticTests.test_upload_completion_read_timeout_and_secret_free_telemetry",
+      "result": "PASS",
+      "seconds": 0.002433
+    }
+  ]
+}

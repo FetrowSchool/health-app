@@ -1,0 +1,5 @@
+Sanitized original-backend transport observation, November2, 2026.
+voice_create stage=session_created upstream_status=201 category=success phase=body_received timeout_kind=none elapsed_ms=1151
+POST /api/voice/sessions ->201 Created (one request, no retry)
+Browser observed Active, actual assistant output, then automatic Closed/session.closed and microphone-off UI by39.319s after click.
+Screenshot/transcript omitted because incidental non-script content appeared. No raw content or SDP retained in deliverables.

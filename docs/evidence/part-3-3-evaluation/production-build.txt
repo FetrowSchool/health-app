@@ -1,0 +1,17 @@
+
+> pause-frontend@0.1.0 build
+> vite build
+
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 37 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/voice-diagnostic.html                0.46 kB │ gzip:  0.30 kB
+dist/index.html                           0.53 kB │ gzip:  0.32 kB
+dist/assets/style-BZAztbVo.css           11.98 kB │ gzip:  3.08 kB
+dist/assets/voiceDiagnostic-DVt7APoj.js   2.25 kB │ gzip:  1.22 kB
+dist/assets/main-JxoH7Dld.js             30.98 kB │ gzip: 10.26 kB
+dist/assets/style-CqzKSiX8.js            79.49 kB │ gzip: 30.78 kB
+
+✓ built in 1.53s

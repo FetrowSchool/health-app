@@ -175,3 +175,22 @@ p { line-height: 1.55; }
 .voice-transcript-segment { margin-block: 12px; overflow-wrap: anywhere; }
 .voice-transcript-segment small { display: block; }
 .voice-transcript-segment p { white-space: pre-wrap; margin-top: 4px; }
+
+/* Saved activity is read-only; long lists scroll beneath the shared safety header. */
+.recent-exercise { font-size: 14px; color: var(--muted); margin: 14px 0 0; }
+.history-link { margin-top: 14px; width: 100%; min-height: 44px; }
+.history-content { display: flex; flex-direction: column; flex: 1; padding-top: 28px; gap: 16px; }
+.history-content h1 { font-size: 32px; }
+.history-section h2 { font-size: 21px; }
+.history-list { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 12px; }
+.history-card { display: block; padding: 16px; border: 1px solid var(--line); border-radius: 16px; background: white; overflow-wrap: anywhere; }
+.history-card strong { display: block; font-size: 16px; }
+.history-card time { display: block; margin-top: 8px; font-size: 13px; color: var(--muted); }
+.history-card p { margin: 8px 0 0; font-size: 14px; }
+.history-status { display: block; margin-top: 6px; font-size: 14px; font-weight: 600; }
+.history-open { width: 100%; text-align: left; }
+.history-open-label { display: block; color: #36566e; font-size: 14px; font-weight: 600; margin-top: 12px; }
+.history-caption { font-size: 13px; color: var(--muted); margin: 4px 0 0; }
+.history-notice p { margin-top: 0; }
+.history-messages p { white-space: pre-wrap; }
+.history-home { margin-top: auto; position: sticky; bottom: 12px; }

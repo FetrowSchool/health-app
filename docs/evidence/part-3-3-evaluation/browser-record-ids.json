@@ -1,0 +1,48 @@
+{
+  "method": "Read-only DOM attributes and visible text from fictional evaluation harness after real test-backend restart",
+  "list": [
+    {
+      "conversation_id": null,
+      "session_id": "738b4faa-6216-4925-aadd-227e6ebadb60",
+      "text": "5-4-3-2-1 Grounding\nExited\nNov 1, 2026, 2:24 PM\n\nDuration: 2.5s"
+    },
+    {
+      "conversation_id": null,
+      "session_id": "1f6dea38-4922-46e3-8ab5-81827921919a",
+      "text": "5-4-3-2-1 Grounding\nCompleted\nNov 1, 2026, 2:24 PM\n\nDuration: 14.4s\n\nFeedback: Helpful"
+    },
+    {
+      "conversation_id": null,
+      "session_id": "30a90fc0-cc8a-4c26-b668-a76fd7e7b6f9",
+      "text": "Paced Breathing\nExited\nNov 1, 2026, 2:23 PM\n\nActive 1s · Total 4.6s"
+    },
+    {
+      "conversation_id": null,
+      "session_id": "d3acf146-f29e-4a72-9167-9bbed812e26a",
+      "text": "5-4-3-2-1 Grounding\nExited\nNov 1, 2026, 2:23 PM\n\nDuration: 3.4s"
+    },
+    {
+      "conversation_id": null,
+      "session_id": "ce2bc0bf-0286-401a-9f56-f1daf2622d80",
+      "text": "Paced Breathing\nExited\nNov 1, 2026, 2:23 PM\n\nActive 5.7s · Total 22s"
+    }
+  ],
+  "detail": {
+    "conversation": [
+      "0ed4fc1d-1f4b-4731-be20-7e794eb8131e"
+    ],
+    "height": 844,
+    "messages": [
+      {
+        "id": "e4de267f-b103-46b4-a2ac-25104ec99400",
+        "text": "You\nNov 1, 2026, 2:24 PM\n\nI selected Helpful after the 5-4-3-2-1 Grounding exercise."
+      },
+      {
+        "id": "796f7e1e-7443-4ffb-bd8d-76bdebf0d775",
+        "text": "Assistant\nNov 1, 2026, 2:24 PM\n\nFeedback noted. You can choose what to do next."
+      }
+    ],
+    "scrollWidth": 390,
+    "width": 390
+  }
+}

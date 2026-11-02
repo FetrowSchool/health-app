@@ -1,0 +1,341 @@
+{
+  "tests": 83,
+  "pass": 83,
+  "fail": 0,
+  "skipped": 0,
+  "method": "Fresh Node tests; deterministic clocks, mocked browser and provider APIs",
+  "records": [
+    {
+      "test_id": "opening is idle; primary hold starts once and release/resume preserves active progress",
+      "result": "PASS"
+    },
+    {
+      "test_id": "cancellation/lost focus clears input ownership and late pointer/keyboard events cannot resume",
+      "result": "PASS"
+    },
+    {
+      "test_id": "Space/Enter and accessible Start/Pause work without repeats or duplicate starts",
+      "result": "PASS"
+    },
+    {
+      "test_id": "Pause intent survives focus loss before an accessible button click",
+      "result": "PASS"
+    },
+    {
+      "test_id": "planned completion is a notice, optional cycles continue, explicit stop is terminal",
+      "result": "PASS"
+    },
+    {
+      "test_id": "first interaction, multiple pauses, early Finish and feedback create only one saved session",
+      "result": "PASS"
+    },
+    {
+      "test_id": "uses local calendar fields rather than a UTC date or 24h interval",
+      "result": "PASS"
+    },
+    {
+      "test_id": "dismissal survives reload and expires on next calendar day, not 24 hours",
+      "result": "PASS"
+    },
+    {
+      "test_id": "blocked storage permits dismissal in this visit without storing mood",
+      "result": "PASS"
+    },
+    {
+      "test_id": "date markers synchronize across instances and retain previously dismissed dates",
+      "result": "PASS"
+    },
+    {
+      "test_id": "health client makes the one intended request and rejects failure/malformed status",
+      "result": "PASS"
+    },
+    {
+      "test_id": "4-second inhale / 6-second exhale pattern continues beyond the six planned cycles",
+      "result": "PASS"
+    },
+    {
+      "test_id": "delayed frames use elapsed active time without drift, and pauses/stop invalidate late callbacks",
+      "result": "PASS"
+    },
+    {
+      "test_id": "exit before start response does not block and updates only the same session",
+      "result": "PASS"
+    },
+    {
+      "test_id": "rapid feedback serializes without duplicate starts/ends and preserves last choice",
+      "result": "PASS"
+    },
+    {
+      "test_id": "failure stays unsaved without blocking; later choice can recover the same session",
+      "result": "PASS"
+    },
+    {
+      "test_id": "old acknowledgment cannot hide a pending newer feedback save",
+      "result": "PASS"
+    },
+    {
+      "test_id": "pseudonymous identity survives reload; blocked storage supports this visit",
+      "result": "PASS"
+    },
+    {
+      "test_id": "activity API sends correct identity/method/body and bounded requests, rejects failures",
+      "result": "PASS"
+    },
+    {
+      "test_id": "Helpful and Not Helpful submit only fixed button context and label mock vs live",
+      "result": "PASS"
+    },
+    {
+      "test_id": "Skip is immediate, clears response, and never invokes provider API",
+      "result": "PASS"
+    },
+    {
+      "test_id": "duplicate pending or completed clicks share one exchange request",
+      "result": "PASS"
+    },
+    {
+      "test_id": "Skip and Home/cancel ignore late responses and abort pending fetch",
+      "result": "PASS"
+    },
+    {
+      "test_id": "failed save, timeout/error, invalid response, and backend unavailability use explicit static fallback",
+      "result": "PASS"
+    },
+    {
+      "test_id": "latest feedback wins the visible response even when an older request finishes later",
+      "result": "PASS"
+    },
+    {
+      "test_id": "enriched feedback adds local date while keeping context retrieval backend-owned",
+      "result": "PASS"
+    },
+    {
+      "test_id": "reviewed senses/counts/instructions are fixed and intended timing is70 seconds",
+      "result": "PASS"
+    },
+    {
+      "test_id": "noticing can be undone and earlier-step progress survives other-step changes",
+      "result": "PASS"
+    },
+    {
+      "test_id": "Grounding feedback uses correct context and duplicate-safe response controller",
+      "result": "PASS"
+    },
+    {
+      "test_id": "history API uses scoped read-only GETs, bounded list parameter, no cache and no provider request",
+      "result": "PASS"
+    },
+    {
+      "test_id": "empty and saved lists have distinct ready states; details retain saved chronological order",
+      "result": "PASS"
+    },
+    {
+      "test_id": "backend failure, missing IDs and malformed data yield neutral retriable states",
+      "result": "PASS"
+    },
+    {
+      "test_id": "invalid conversation IDs never issue a read request",
+      "result": "PASS"
+    },
+    {
+      "test_id": "Home/support/unmount disposal aborts pending history and ignores late reads",
+      "result": "PASS"
+    },
+    {
+      "test_id": "newer conversation selection and Back ignore old results without hiding saved lists",
+      "result": "PASS"
+    },
+    {
+      "test_id": "personalization waits for writes, uses only returned completion, and can be absent",
+      "result": "PASS"
+    },
+    {
+      "test_id": "stale personalization cannot appear after departure or replace a newer read",
+      "result": "PASS"
+    },
+    {
+      "test_id": "durations distinguish missing, zero, short exits and separate active/wall measurements",
+      "result": "PASS"
+    },
+    {
+      "test_id": "microphone-only probe requests no API and stops every granted track",
+      "result": "PASS"
+    },
+    {
+      "test_id": "microphone-only failures are classified without private browser detail",
+      "result": "PASS"
+    },
+    {
+      "test_id": "diagnostic API targets only isolated FastAPI with SDP, no browser model or key",
+      "result": "PASS"
+    },
+    {
+      "test_id": "nothing starts on mount; only explicit start connects, duplicates do not create another session",
+      "result": "PASS"
+    },
+    {
+      "test_id": "ICE gathering finishes before FastAPI receives the final local SDP",
+      "result": "PASS"
+    },
+    {
+      "test_id": "session.started during remote answer application cannot prematurely show Active",
+      "result": "PASS"
+    },
+    {
+      "test_id": "permission denial leaves text independent and allows an explicit new microphone attempt",
+      "result": "PASS"
+    },
+    {
+      "test_id": "unconfigured or failed API does not request microphone permission",
+      "result": "PASS"
+    },
+    {
+      "test_id": "mute only disables outgoing microphone tracks and can be reversed",
+      "result": "PASS"
+    },
+    {
+      "test_id": "blocked autoplay exposes a gesture retry that calls play immediately",
+      "result": "PASS"
+    },
+    {
+      "test_id": "late failed autoplay cannot overwrite a newer successful gesture",
+      "result": "PASS"
+    },
+    {
+      "test_id": "End stops capture immediately, waits briefly, then releases resources and sends only session.close",
+      "result": "PASS"
+    },
+    {
+      "test_id": "cancel during permission releases late microphone tracks without creating a peer",
+      "result": "PASS"
+    },
+    {
+      "test_id": "dispose keeps in-flight SDP observable and hangs up a late answer without reactivating",
+      "result": "PASS"
+    },
+    {
+      "test_id": "ICE timeout cleans up, never POSTs, and cannot resume on late ICE",
+      "result": "PASS"
+    },
+    {
+      "test_id": "permission and session.started watchdogs are finite and release late resources",
+      "result": "PASS"
+    },
+    {
+      "test_id": "configured duration closes even a muted session and clears timers",
+      "result": "PASS"
+    },
+    {
+      "test_id": "provider, malformed-event, mismatched-session, peer and data-channel failures are sanitized",
+      "result": "PASS"
+    },
+    {
+      "test_id": "timed transcripts preserve exact deltas, interval ordering and overlap without invented turns",
+      "result": "PASS"
+    },
+    {
+      "test_id": "disconnect while closing reports incomplete finalization",
+      "result": "PASS"
+    },
+    {
+      "test_id": "session HTTP failure has no retries and releases the microphone",
+      "result": "PASS"
+    },
+    {
+      "test_id": "voice API sends only SDP to FastAPI and projects validated response fields",
+      "result": "PASS"
+    },
+    {
+      "test_id": "voice API rejects unavailable/malformed responses without echoing provider details",
+      "result": "PASS"
+    },
+    {
+      "test_id": "session.closed acknowledges End early; no HTTP fallback or duplicate End command",
+      "result": "PASS"
+    },
+    {
+      "test_id": "duplicate Start during Closing and repeated End do not extend the deadline or duplicate work",
+      "result": "PASS"
+    },
+    {
+      "test_id": "late SDP after End requests hangup exactly once without applying the answer or restoring Active",
+      "result": "PASS"
+    },
+    {
+      "test_id": "late answer while End is still waiting cannot reactivate and does not cause duplicate fallback",
+      "result": "PASS"
+    },
+    {
+      "test_id": "a late old result cannot change a new active session or its audio",
+      "result": "PASS"
+    },
+    {
+      "test_id": "hangup failure preserves local cleanup and reports unconfirmed closure without provider details",
+      "result": "PASS"
+    },
+    {
+      "test_id": "each new conversation uses fresh microphone/peer/channel and no retained conversation state",
+      "result": "PASS"
+    },
+    {
+      "test_id": "unmount stops capture immediately and cleans the bounded closing session",
+      "result": "PASS"
+    },
+    {
+      "test_id": "navigation stops capture immediately and cleans the bounded closing session",
+      "result": "PASS"
+    },
+    {
+      "test_id": "crisis stops capture immediately and cleans the bounded closing session",
+      "result": "PASS"
+    },
+    {
+      "test_id": "page exit stops capture immediately and cleans the bounded closing session",
+      "result": "PASS"
+    },
+    {
+      "test_id": "hidden stops capture immediately and cleans the bounded closing session",
+      "result": "PASS"
+    },
+    {
+      "test_id": "duration stops capture immediately and cleans the bounded closing session",
+      "result": "PASS"
+    },
+    {
+      "test_id": "hangup HTTP request survives page exit, sends only the ID and never exposes credentials",
+      "result": "PASS"
+    },
+    {
+      "test_id": "existing text feedback remains usable after voice configuration, denial or provider failure",
+      "result": "PASS"
+    },
+    {
+      "test_id": "diagnostic trace covers minimal offer/answer/start/connection/mute/close without raw data",
+      "result": "PASS"
+    },
+    {
+      "test_id": "diagnostic failures cannot break the voice lifecycle",
+      "result": "PASS"
+    },
+    {
+      "test_id": "fresh voice sessions send no instruction/start/update events and keep text source paths separate",
+      "result": "PASS"
+    },
+    {
+      "test_id": "E11-M mocked ordinary conversation preserves exact fictional reply without claiming model quality",
+      "result": "PASS"
+    },
+    {
+      "test_id": "E12-M mocked supported exercise suggestion is displayed and never auto-navigates",
+      "result": "PASS"
+    },
+    {
+      "test_id": "E13-M overlapping fictional interruption and refusal transcripts preserve user direction; End releases resources",
+      "result": "PASS"
+    },
+    {
+      "test_id": "BC3 observed boundary: unknown exercise actions cannot alter timing/order; unsupported spoken text is unfiltered",
+      "result": "PASS"
+    }
+  ]
+}

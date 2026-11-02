@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-02",
+  "method": "Private SHA256 snapshot and read-only full-row/schema comparison; only counts/outcomes exported",
+  "protected_files_checked": 56,
+  "protected_files_unchanged": true,
+  "unexpected_changed_files": [],
+  "original_rows_preserved": {
+    "app_metadata": true,
+    "daily_mood_checkins": true,
+    "messages": true,
+    "exercise_sessions": true,
+    "conversations": true
+  },
+  "runtime_counts": {
+    "app_metadata": {
+      "before": 1,
+      "after": 1
+    },
+    "daily_mood_checkins": {
+      "before": 14,
+      "after": 15
+    },
+    "messages": {
+      "before": 67,
+      "after": 67
+    },
+    "exercise_sessions": {
+      "before": 73,
+      "after": 73
+    },
+    "conversations": {
+      "before": 36,
+      "after": 36
+    }
+  },
+  "schema_unchanged": true,
+  "foreign_keys_valid": true,
+  "fictional_browser_counts": {
+    "exercise_sessions": 3,
+    "daily_mood_checkins": 0,
+    "conversations": 0,
+    "messages": 0
+  },
+  "mock_voice_requests": {
+    "mock_session_posts": 6,
+    "real_provider_calls": 0
+  },
+  "additional_daily_rows": 1,
+  "additional_daily_rows_not_fixture_identity": true,
+  "addition_note": "One additional daily row appeared concurrently in the normal application; all original rows preserved, no value/identity exported or removed. Evaluation backend uses a different database and fixture identity."
+}

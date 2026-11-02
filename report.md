@@ -1,4 +1,4 @@
-# **Assignment 3.1 — Research and Design**
+# **Assignment 3.3 — finalization**
 
 ## **Repository Information**
 
@@ -7,19 +7,20 @@
 
 ## **Project Overview**
 
-For Assignment 3.2, I developed a working version of "Pause", a mental health skills application designed around simplicity and accessibility. The application now has two working exercises: Paced Breathing and 5-4-3-2-1 Sensory Grounding.
+For Assignment 3.3, I focused on finsihing and refining all the activies in Pause. The application supports PAced Breathing and 5-4-3-2-1 Sensory Grounding, along with an AI conversation feature that allows users to recive help from a model designed to be theraputic. 
 
-The goal was to create an app that allows users to complete exercises with minimal reading, typing, or unnecessary navigation.
+The goal of this final part was to integrate the remaining feature, evaluate different scenrios, and verify that the app runs consitently. 
+
 
 ## **Application Features**
 
 The application includes a daily mood check-in that appears once per day and allows users to select their mood. From the home screen, users can choose either exercise directly or use the AI-powered Help Me Choose feature.
 
-Paced Breathing guides users through six cycles of 4 second inhales and 6 second exhales using an animated circle and countdown. Sensory Grounding guides users through the five senses using buttons to track their progress. All exercises and screens allow users to exit at any time and Crisis Support remains accessible the whole time.
+Paced Breathing guides users through six cycles of 4 second inhales and 6 second exhales using an animated circle and countdown. Sensory Grounding guides users through the five senses using buttons to track their progress.
 
-## **Research-Based Decisions**
+The application also includes an AI conversation interface which allows users to communicate with an AI assistant and receive suggestions based on how they are feeling or what they need. 
 
-The design follows the research requirements R1–R4 and design principles D1–D6 provided in the assignment. These findings helped make decisions such as keeping exercises short, displaying one instruction at a time, minimizing required input, and allowing users to control their experience. Crisis support access remains visible throughout the application. The daily mood check in also provides a simple way to personalize the experience without requiring users to configure settings.
+A history feature allows users to review their previous activity, while stored mood selections and exercise history support personalization.
 
 
 ## **AI Integration**
@@ -37,15 +38,37 @@ This allows users to speak directly with the AI instead of relying only on the t
 
 ## **Database and Persistence**
 
-The application uses SQLite to save daily check ins, exercise sessions, optional feedback, and AI conversations.  
+SQLite is used to save daily mood check-ins, exercise sessions, optional feedback, and supported conversation records.
 
-Database persistence was verified by restarting the backend and confirming that saved records remained available.
+The application uses saved information to personalize parts of the experience without automatically choosing exercises for users. The History feature provides a way to review previously completed exercises and available saved conversations.
 
-## **Safety and Accessibility**
+## **Evaluation and Testing**
 
-Crisis Support is available independently of the language model and backend. Users can exit exercises immediately, skip optional prompts, and return home during AI requests or failures.
+I evaluated Pause using at least fifteen fictional scenarios covering normal application use, exercise interactions, interruptions, and failure cases.
 
-The interface uses large labeled buttons, simple navigation, neutral colors, and reduced-motion support.
+The evaluation also included three behavior checks focused on:
+
+1. Crisis Support remaining accessible throughout the application.
+2. Users maintaining control over exercises and navigation.
+3. AI responses being unable to change the fixed exercise sequences.
+
+Automated tests used mocked model responses to verify repeatable behavior. Selected fictional scenarios were also tested using live AI models to evaluate actual responses and variation.
+
+Final verification results:
+
+* Backend tests: 95 backend tests
+* Frontend tests: 85 frontend tests
+* Production build: Pass
+* Fictional scenarios: 22/26 passed
+* Behavior checks: 1/3 passed
+* Clean-checkout verification: Pass
+
+See the verification documentation for expected and observed results.
+
+## **Demonstration**
+
+Video link: https://drive.google.com/file/d/1JvCee75LmTHgC3xTfdIIPzEYWkHT8Dy0/view?usp=sharing
+
 
 ## **Design and Verification Evidence**
 
@@ -77,8 +100,10 @@ One major change was replacing the STOP exercise with 5-4-3-2-1 Sensory Groundin
 
 Paced breathing has also been changed to make it more interactive through a closed loop design.Instead of automatically starting when the exercise is opened, users now press and hold the breathing circle to begin. The exercise follows the same four-second inhale and six-second exhale pattern, but continues only while the button is held. Releasing the button pauses the exercise, and holding it again resumes from where the user stopped. This gives users more control over the exercise while allowing the application to detect their interaction. The intended exercise duration remains 60 seconds, but users can choose to continue longer or finish when they want.
 
-## **Remaining Work**
+## **Final Status and Findings**
 
-Part 3.3 will focus on further refinement, reviewing saved history, and completing the required evaluation using at least fifteen fictional scenarios and three behavior checks.
+Assignment 3.3 completes the devlopment and evalution for Pause. The app demonstrates the integration of Vue, FastAPI, SQLite, conversational AI, and live voice interaction within a mobile-style interface.
 
-Current limitations include the possibility of interrupted sessions remaining marked as started and incomplete screen-reader and zoom accessibility testing.
+I'm happy with where this final version rest I did want to integrate the AI voice model into the 5-4-3-2-1 grounding, but I never quite got it to work. Besides that I did everything I set out to do and am satifed to leave this project here. 
+
+One thing that surprised me about this project is just how sensitive the backend set up for voice integration is. When I was first trying to implement the voice integartion feature it would consitant fail to configure or would have connection issues and time out, even when the codex automatic tests would pass. I learned that relying on automatic tests isn't always a good idea and some things need to be tested indepently by a real user. 

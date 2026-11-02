@@ -1,0 +1,37 @@
+{
+  "method": "SHA256 comparison against private pre-evaluation snapshot; read-only full-row subset/schema comparison of actual runtime SQLite. No private values exported. Concurrent additions are preserved.",
+  "protected_file_count": 56,
+  "protected_files_unchanged": true,
+  "unexpected_changed_files": [],
+  "original_rows_preserved": {
+    "app_metadata": true,
+    "daily_mood_checkins": true,
+    "messages": true,
+    "exercise_sessions": true,
+    "conversations": true
+  },
+  "counts": {
+    "app_metadata": {
+      "before": 1,
+      "after": 1
+    },
+    "daily_mood_checkins": {
+      "before": 14,
+      "after": 14
+    },
+    "messages": {
+      "before": 67,
+      "after": 67
+    },
+    "exercise_sessions": {
+      "before": 73,
+      "after": 73
+    },
+    "conversations": {
+      "before": 36,
+      "after": 36
+    }
+  },
+  "schema_unchanged": true,
+  "foreign_key_check_empty": true
+}

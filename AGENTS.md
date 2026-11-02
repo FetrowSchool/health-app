@@ -5,14 +5,21 @@ root and preserve existing code, data, and unfinished work. Read the README and,
 when present, `docs/design-pipeline.md` and `handoffs/current.md` before changes.
 These instructions are self-contained; no course website is needed to use them.
 
-## Startup boundary
+## Current application and documentation status — November2, 2026
+
+Current Pause uses hold-to-run/release-to-pause Breathing (planned60 active seconds, explicit Finish), fixed5-4-3-2-1 Grounding, optional daily mood, direct **Stop to chat / Talk to Pause** voice conversation, post-exercise text feedback, schema7 SQLite, read-only History and a latest-completed exercise label. No typed-chat composer, active STOP exercise or Help Me Choose questionnaire remains. Preserve historical records/artifacts. Voice audio/transcripts are not persisted.
+
+Current sources are README, docs/design.md, docs/user-flow.md and the latest contracts/verification entries; dated milestone scopes below are historical where superseded. [AI-use disclosure](AI-USE.md), [curated evidence](docs/ai-development-log.md) and [submission checklist](docs/submission-checklist.md) distinguish configuration, mock/live evidence and unfinished items. GPT-Live transport succeeded once; delegated gpt-6-luna execution is not verified. Do not infer new paid-call authorization, functional work, publication or completed recordings from this documentation stage. Keep report.md unchanged and do not commit/push unless separately requested.
+
+## Historical startup boundary — setup completed
 
 For the startup task, create only the base folders and README.md/AGENTS.md.
 Preserve existing supporting files. Do not install dependencies, build an
 interface, configure credentials, create a database, or create/capture a Figma
 design during this step. Add supporting documents later as work requires them.
 
-The README leaves project-specific design guidelines open. Before implementing
+The initial README left project-specific design guidelines open. Those choices
+are now recorded in the current design documents. For a new design change, before implementing
 an interface, obtain the developer's chosen skill, intended flow, design
 guidelines, and rationale based on class principles. Do not silently substitute
 the lecture's breathing example or invent decisions for unfinished placeholders.
@@ -97,6 +104,8 @@ startup. Use fictional data for all tests and demonstrations.
 
 ### Save conversations and retrieve context with RAG
 
+The model-proposed SQL RAG workflow below is a retained assignment requirement/plan, **not an implemented capability**. Current History and feedback context use fixed application-owned SQL. Do not add RAG as part of documentation cleanup; a separate implementation request is required.
+
 Persist submitted user messages and actual assistant replies with message and
 conversation IDs, role, content, timestamp, and request status. Store exercise
 sessions and preferences in related records. Make ordering and relationships
@@ -145,7 +154,7 @@ inspection method; do not require a particular viewer or install one silently.
   within 90 seconds, measured from first instruction to final planned step,
   including application delays. Report entry/setup time separately; exclude
   voluntary pauses and time accessing support. Do not force completion or exit.
-- Keep Stop usable throughout an exercise. Clear old timers when leaving or
+- Keep Exit usable throughout an exercise. Clear old timers when leaving or
   restarting. Record stopped and completed sessions differently.
 - Keep a clearly identified crisis-support route visible and usable in every
   relevant state, even when the model fails. It must not depend on a classifier,
@@ -224,28 +233,33 @@ next step. A new session must verify these claims against the files. Keep a
 curated record of tools, models, important prompts, and failed or revised
 approaches for the project's AI-use disclosure.
 
-## Current Pause Part 3.2 Grounding revision scope
+## Historical Part3.2 Grounding revision scope — completed milestone
 
 The latest developer request replaces active STOP with 5-4-3-2-1 Sensory Grounding. Use the exact supplied five instructions/counts and identifier grounding_54321, optional reversible taps, manual Continue/Back, and persistent Exit/Crisis access. Continue is never gated by circles; no model may alter instructions or progression. Preserve historical STOP data, Paced Breathing, existing model configuration, and all unrelated work. A minimal transactionally verified SQLite constraint migration is authorized; no circle details are persisted.
 
 Update current design/research/flow/contracts, README, verification and handoff; preserve original Part 3.1 STOP artifacts as labeled history. Test mock feedback, migration preservation, actual timing and mobile interaction. Do not edit report.md, install packages, use Figma, add RAG/History, commit/push or advance further. No new live model calls are necessary. Keep credentials private in ignored backend/.env. The development process may override MODEL_PROVIDER=mock for verification without changing saved live settings. Stop for review after this increment.
 
 
-## Latest completed provider investigation
+## Historical provider-selection investigation — October19 milestone
 
 The subsequent developer request authorized tracing fictional live Grounding feedback and correcting the provider-selection issue. Root cause was the previous mock process override; backend/.env itself was correct. The backend is now running normally in live mode without that override. One live Grounding request succeeded and persisted with correct frontend source labeling. Source/safety/schema/env were unchanged. Tests must continue to inject mocks without leaving the shared review server silently in mock mode. If temporarily overriding it, restore its intended mode and record actual service state before handing off. Stop after investigation; no report.md changes, commits/pushes or further features.
 
 
-## Current Help Me Choose refinement scope
+## Historical Help Me Choose refinement scope — retired October26
 
 The latest developer request authorizes optional Home recommendations, structured supported exercise/reviewed reason validation, bounded scoped mood/recent-history context for recommendations and feedback, minimal conversation migration, and verification. Preserve both fixed skills and direct access, daily mood, truthful mock/live/static labels, independent support and immediate Home. Reuse conversation/message records; no free-text input, new therapeutic instructions, RAG/history/Figma, report.md edits, automatic commits/pushes or unrelated features. Use deterministic mocks for routine checks; at most three fictional live-model calls in this increment. Restore ordinary live-configured backend after temporary mock testing and record actual final mode. Stop after reviewable completion.
 
 
-## Latest closed-loop Breathing scope
+## Historical schema6 closed-loop Breathing scope — superseded by hold-to-run
 
 The developer authorized optional Hold/Tap/Observe interaction, immediate neutral application feedback and nullable per-session interaction summaries. Preserve60s/six4s-in6s-out cycles and independent Exit/support. Observations do not measure respiration; no raw interaction events or new model-generated instructions. Schema6 preserves old rows with NULL summary fields. Tests/evidence/limitations belong in current docs/handoff; no report.md changes, installs, automatic commits/pushes or live calls were needed. Restore ordinary live configuration after mock verification and stop for review.
 
 
 ## Current direct-conversation interface scope — October26
 
-The developer replaced active Help Me Choose with the existing voice conversation. Home card uses reviewed browser labels stop to chat / Ai assistant conversation, opening Talk to Pause directly. Do not restore the predefined focus/suggestion workflow. Its creation endpoint/helpers/provider prompt were removed; keep historical recommendation data/read response compatibility and shared feedback context/persistence. The developer confirmed voice plus existing post-exercise text feedback; no typed-chat composer was added. Preserve exercises, mood, independent support, GPT-Live config/prompts/lifecycle and transient-only voice. Existing earlier Help Me Choose scope is historical. No report edits, installs, automatic commits/pushes or paid calls for this increment.
+The developer replaced active Help Me Choose with the existing voice conversation. Home card uses reviewed browser labels Stop to chat / Ai assistant conversation, opening Talk to Pause directly. Do not restore the predefined focus/suggestion workflow. Its creation endpoint/helpers/provider prompt were removed; keep historical recommendation data/read response compatibility and shared feedback context/persistence. The developer confirmed voice plus existing post-exercise text feedback; no typed-chat composer was added. Preserve exercises, mood, independent support, GPT-Live config/prompts/lifecycle and transient-only voice. Existing earlier Help Me Choose scope is historical. No report edits, installs, automatic commits/pushes or paid calls for this increment.
+
+
+## Completed Part3.3 History milestone — November1, 2026
+
+User authorizes read-only History (recent exercises/text conversations/details) and optional latest-completed supported exercise label on experimental part-2. Reuse schema7/scoped local identity, preserve all data, chronological messages and active-vs-wall timing. No voice audio/transcript storage, accounts, RAG, new AI context, preference UI or unrelated features. Earlier deferrals of History are historical. Test fictional scope/limits/empty/errors/stale reads/mobile and compare API/SQLite/UI; update current docs/handoff. Do not edit report.md, install packages, commit/push or advance to evaluation/demonstration until requested.

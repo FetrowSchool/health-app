@@ -13,12 +13,15 @@ export function createActivityAPI(appId, fetcher = fetch) {
       headers: { 'Content-Type': 'application/json', 'X-App-ID': appId },
       signal: externalSignal ? AbortSignal.any([externalSignal, AbortSignal.timeout(28000)]) : AbortSignal.timeout(3000),
       keepalive: true,
+      ...(method === 'GET' ? { cache: 'no-store' } : {}),
       ...(body === undefined ? {} : { body: JSON.stringify(body) }),
     })
     if (!response.ok) throw new Error('Data not saved')
     return response.json()
   }
   return {
+    history: (limit = 20, signal) => request(`/history?limit=${limit}`, 'GET', undefined, signal),
+    conversation: (id, signal) => request(`/conversations/${encodeURIComponent(id)}`, 'GET', undefined, signal),
     startSession: payload => request('/sessions', 'POST', payload),
     endSession: (id, payload) => request(`/sessions/${id}`, 'PATCH', payload),
     saveFeedback: (id, feedback) => request(`/sessions/${id}/feedback`, 'PUT', { feedback }),

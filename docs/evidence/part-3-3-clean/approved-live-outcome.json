@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-02",
+  "approval": "One short paid voice attempt, no retry, existing server credential; no credential copied to clean checkout",
+  "activeLimitSeconds": 30,
+  "elapsedAtClosedSeconds": 39.319,
+  "observedActive": true,
+  "observedAssistantOutput": true,
+  "confirmedSessionClosed": true,
+  "uiReportsMicrophoneOff": true,
+  "fictionalScriptCompleted": false,
+  "conversationQualityScored": false,
+  "realMuteUnmuteTested": false,
+  "manualEndTested": false,
+  "automaticDurationEnd": true,
+  "privateTranscriptExported": false,
+  "homeAndSupportAfterClose": true,
+  "provider": "OpenAI",
+  "spoken_model": "gpt-live-1",
+  "delegated_model": "gpt-6-luna",
+  "provider_http_status": 201,
+  "application_http_status": 201,
+  "provider_request_elapsed_ms": 1151,
+  "session_creation_posts": 1,
+  "automatic_retries": 0,
+  "clean_checkout_credentials_copied": false,
+  "audio_element_observed": {
+    "paused": false,
+    "readyState": 4,
+    "audibility_not_independently_scored": true
+  },
+  "billing_usage_not_inspected": true,
+  "script_result": "Connection/assistant output/automatic closure verified. Scripted ordinary conversation, recommendation, refusal/interruption not completed; content not exported."
+}

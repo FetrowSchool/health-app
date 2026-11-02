@@ -1,0 +1,149 @@
+{
+  "date": "2026-11-02",
+  "method": "Real clean application and credential-free default mock backend; production preview4173, no fake media/provider routes in this browser run",
+  "observations": [
+    {
+      "id": "A11Y-dialog",
+      "observed": "Tab moved heading→Calm, native button name exposed,3px focus outline.390x844 with390px scroll width."
+    },
+    {
+      "id": "Home",
+      "observed": "Escape skipped mood and opened Home with both exercises, chat and History.",
+      "metrics": {
+        "buttons": [
+          {
+            "height": 44,
+            "label": "Crisis Support",
+            "width": 117
+          },
+          {
+            "height": 96,
+            "label": "Stop to chat\nAi assistant conversation\n↗",
+            "width": 342
+          },
+          {
+            "height": 96,
+            "label": "Paced Breathing\nAbout 60 seconds\n↗",
+            "width": 342
+          },
+          {
+            "height": 96,
+            "label": "5-4-3-2-1 Grounding\nAbout 60–75 seconds\n↗",
+            "width": 342
+          },
+          {
+            "height": 52,
+            "label": "History",
+            "width": 342
+          }
+        ],
+        "focus": "Stop to chat\nAi assistant conversation\n↗",
+        "height": 844,
+        "outline": "rgb(52, 91, 121) solid 3px",
+        "scrollHeight": 844,
+        "scrollWidth": 390,
+        "width": 390
+      }
+    },
+    {
+      "id": "History-empty",
+      "observed": "Both empty-state sections shown with Return Home and support."
+    },
+    {
+      "id": "Breathing-start-reduced",
+      "observed": "Keyboard opened Ready; reduced motion toggled On; accessible Start without holding begins timed exercise.",
+      "dom": {
+        "scrollWidth": 390,
+        "style": [],
+        "text": "PACED BREATHING\nExit\nBreathe In\n\n4 seconds\n\nRelease or select Pause to pause.\n\nPlanned portion: six cycles · 60 active seconds.\n\nActive 0:00 · 0 of 6 planned cycles\n\nFinish\nPause\nReduced motion On",
+        "width": 390
+      }
+    },
+    {
+      "id": "Breathing-planned",
+      "observed": "Real-time run reached6/6 and planned-complete notice by observed Active1:05, continued optionally without forced exit. Reduced-motion transform remained none."
+    },
+    {
+      "id": "Mock-feedback",
+      "observed": "Helpful saved; Demo response · mock provider shown with actual deterministic reply. No credentials."
+    },
+    {
+      "id": "Grounding-keyboard",
+      "observed": "Tab/Enter toggled first Sight counter; Continue with1/5 accepted, Back preserved1/5."
+    },
+    {
+      "id": "Grounding-complete",
+      "observed": "All5 senses in exact5/4/3/2/1 order; counters optional; completed in manual walkthrough."
+    },
+    {
+      "id": "Voice-unconfigured",
+      "observed": "Real config returned unconfigured; selecting microphone shows explicit error without permission prompt or session creation; Home/support remain."
+    },
+    {
+      "id": "Zoom",
+      "observed": "Native Cmd-plus produced no measurable viewport/DPR change in this in-app browser; reset Cmd0. Actual200% browser zoom NOT VERIFIED.",
+      "before": {
+        "dpr": 1,
+        "height": 844,
+        "scrollWidth": 390,
+        "width": 390
+      },
+      "after": {
+        "dpr": 1,
+        "height": 844,
+        "scrollWidth": 390,
+        "width": 390
+      }
+    },
+    {
+      "id": "Exit",
+      "observed": "Started brief Breathing and Grounding sessions; each explicit Exit immediately returned Home."
+    },
+    {
+      "id": "History-saved",
+      "observed": "4 saved sessions with completed/exited, durations and feedback; actual mock user/assistant messages chronological and source labeled."
+    },
+    {
+      "id": "A11Y-contrast",
+      "observed": "Selected actual rendered colors with nearest opaque ancestor background; not a full contrast audit.",
+      "pairs": [
+        {
+          "bg": "rgb(248, 249, 247)",
+          "fg": "rgb(37, 54, 65)",
+          "selector": "h1",
+          "ratio": 11.82
+        },
+        {
+          "bg": "rgb(248, 249, 247)",
+          "fg": "rgb(86, 104, 117)",
+          "selector": ".prototype",
+          "ratio": 5.47
+        },
+        {
+          "bg": "rgb(255, 255, 255)",
+          "fg": "rgb(37, 54, 65)",
+          "selector": ".exercise-card",
+          "ratio": 12.48
+        },
+        {
+          "bg": "rgb(248, 249, 247)",
+          "fg": "rgb(54, 86, 110)",
+          "selector": ".crisis",
+          "ratio": 7.33
+        }
+      ]
+    },
+    {
+      "id": "A11Y-reflow",
+      "observed": "At320px Home scrollWidth320, scrollHeight846; vertical scrolling preserves controls. Not a substitute for actual browser zoom."
+    },
+    {
+      "id": "Backend-offline-support",
+      "observed": "After stopping clean FastAPI, History displayed unavailable; independent local support opened with no contact link used."
+    },
+    {
+      "id": "Restart",
+      "observed": "After actual clean backend restart, same4 sessions and1 saved conversation reloaded successfully."
+    }
+  ]
+}

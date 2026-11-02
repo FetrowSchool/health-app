@@ -1,0 +1,17 @@
+{
+  "health": {
+    "status": "ok",
+    "database": "ready",
+    "model_configured": true
+  },
+  "voice_config": {
+    "status": "configured",
+    "duration_seconds": 60
+  },
+  "original_backend_pid": 88692,
+  "original_frontend_pid": 87670,
+  "diagnostic_pid_unchanged": 30937,
+  "saved_env_modified": false,
+  "clean_services_stopped": true,
+  "package_lock_identical_after_clean_install": true
+}

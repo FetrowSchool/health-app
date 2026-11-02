@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-02",
+  "relative_links_checked": 158,
+  "missing_links": [],
+  "credential_match_files": [],
+  "whitespace_conflict_issues": [],
+  "protected_unchanged": true,
+  "screenshots": 10,
+  "scenario_followup_rows": 23,
+  "live_session_attempts": 1,
+  "private_live_screenshot_omitted": true,
+  "clean_env_still_absent": true
+}

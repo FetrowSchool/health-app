@@ -1,0 +1,24 @@
+{
+  "conversation_id": "aad30361-7f6a-4724-9431-729f44c1bead",
+  "homeHeight": 56,
+  "messages": [
+    {
+      "content": "I selected Helpful after the Paced Breathing exercise.",
+      "created_at": "2026-11-01T12:01:42Z",
+      "id": "43f102f1-bc77-45a3-8a6d-6fe41b49bc1a",
+      "role": "user"
+    },
+    {
+      "content": "Feedback noted. You can choose what to do next.",
+      "created_at": "2026-11-01T12:01:43Z",
+      "id": "fa9984ef-617d-414b-8990-4860b08fe458",
+      "role": "assistant"
+    }
+  ],
+  "viewport": {
+    "height": 844,
+    "scrollHeight": 844,
+    "scrollWidth": 390,
+    "width": 390
+  }
+}

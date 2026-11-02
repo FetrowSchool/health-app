@@ -1,0 +1,41 @@
+{
+  "list": [
+    {
+      "conversation_id": null,
+      "session_id": "d7c6d14f-ac49-435b-9d33-829b17d914bc",
+      "text": "5-4-3-2-1 Grounding\nExited\nNov 2, 2026, 12:21 PM\n\nDuration: 0.3s"
+    },
+    {
+      "conversation_id": null,
+      "session_id": "36f8ae4b-1cc0-4aa9-9bb3-05063e24adc7",
+      "text": "Paced Breathing\nExited\nNov 2, 2026, 12:21 PM\n\nActive 0s · Total 0.5s"
+    },
+    {
+      "conversation_id": null,
+      "session_id": "750d28b9-e9bd-46b0-9c11-79896cbc0bfc",
+      "text": "5-4-3-2-1 Grounding\nCompleted\nNov 2, 2026, 12:19 PM\n\nDuration: 29.3s\n\nFeedback: Skipped"
+    },
+    {
+      "conversation_id": null,
+      "session_id": "2449e24e-75a3-43a3-ab72-cd4bfcb1398f",
+      "text": "Paced Breathing\nCompleted\nNov 2, 2026, 12:18 PM\n\nActive 1m 12s · Total 1m 12s\n\nFeedback: Helpful"
+    }
+  ],
+  "detail": {
+    "conversation": [
+      "f17f74de-22d5-4af5-91ee-aac9939b736f"
+    ],
+    "messages": [
+      {
+        "id": "0f5471dd-3ae3-4882-907a-cb240254b658",
+        "text": "You\nNov 2, 2026, 12:19 PM\n\nI selected Helpful after the Paced Breathing exercise."
+      },
+      {
+        "id": "63060c1e-290f-4b3b-8226-ed35e88ef2ea",
+        "text": "Assistant\nNov 2, 2026, 12:19 PM\n\nFeedback noted. You can choose what to do next."
+      }
+    ],
+    "scrollHeight": 844,
+    "scrollWidth": 390
+  }
+}

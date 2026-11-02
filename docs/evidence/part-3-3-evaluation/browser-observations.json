@@ -1,0 +1,129 @@
+{
+  "date": "2026-11-01",
+  "origin": "http://127.0.0.1:5290",
+  "method": "Real browser, actual Vue App with evaluation-only fake microphone, WebRTC and voice API; deterministic text provider; isolated fictional SQLite. No real voice/audio/model evaluation.",
+  "observations": [
+    {
+      "id": "S01",
+      "observed": "Fresh isolated origin displays daily mood dialog with Skip and Crisis Support."
+    },
+    {
+      "id": "S02",
+      "observed": "Skip reaches Home; both exercise cards and chat/history visible."
+    },
+    {
+      "id": "S03",
+      "observed": "Same-day reload returns directly to Home without mood popup."
+    },
+    {
+      "id": "BC1-Home",
+      "observed": "Crisis route opened; no contact links activated."
+    },
+    {
+      "id": "S04",
+      "observed": "Breathing remains Ready/0:00 with Finish disabled and zero saved exercise rows before interaction."
+    },
+    {
+      "id": "S05",
+      "observed": "4500ms pointer hold starts one session and reaches Breathe Out/6 seconds/Active0:04."
+    },
+    {
+      "id": "S06",
+      "observed": "Release shows Paused. Main text unchanged across intervening SQLite inspection.",
+      "unchanged": true
+    },
+    {
+      "id": "S07",
+      "observed": "1200ms resumed hold advances Active0:04 to0:05 and remaining exhale6 to5 seconds without restarting."
+    },
+    {
+      "id": "BC1-Breathing",
+      "observed": "Crisis route opens immediately from paused active breathing."
+    },
+    {
+      "id": "S10",
+      "observed": "Explicit Exit from Grounding and Breathing returns Home immediately; SQLite confirms exited statuses. Breathing wall21.96s/active5.72s includes voluntary pause; secondwall4.64s/active1.01s."
+    },
+    {
+      "id": "S08",
+      "observed": "Sight5 → Touch4 → Hearing3 → Smell2 → Taste1.",
+      "states": [
+        "5-4-3-2-1 GROUNDING\n\nExit\n\nStep 1 of 5 · Sight\n\nNotice 5 things you can see.\n\nTap a circle for each item you notice. Tap again to undo.\n\n1\n2\n3\n4\n5\n\n0 of 5 noticed\n\nYou can skip any step. Continue when you’re ready.\n\nContinue\n→",
+        "5-4-3-2-1 GROUNDING\n\nExit\n\nStep 2 of 5 · Touch\n\nNotice 4 things you can feel.\n\nTap a circle for each item you notice. Tap again to undo.\n\n1\n2\n3\n4\n\n0 of 4 noticed\n\nYou can skip any step. Continue when you’re ready.\n\nBack\nContinue\n→",
+        "5-4-3-2-1 GROUNDING\n\nExit\n\nStep 3 of 5 · Hearing\n\nNotice 3 things you can hear.\n\nTap a circle for each item you notice. Tap again to undo.\n\n1\n2\n3\n\n0 of 3 noticed\n\nYou can skip any step. Continue when you’re ready.\n\nBack\nContinue\n→",
+        "5-4-3-2-1 GROUNDING\n\nExit\n\nStep 4 of 5 · Smell\n\nNotice 2 things you can smell.\n\nTap a circle for each item you notice. Tap again to undo.\n\n1\n2\n\n0 of 2 noticed\n\nYou can skip any step. Continue when you’re ready.\n\nBack\nContinue\n→",
+        "5-4-3-2-1 GROUNDING\n\nExit\n\nStep 5 of 5 · Taste\n\nNotice 1 thing you can taste.\n\nTap a circle for each item you notice. Tap again to undo.\n\n1\n\n0 of 1 noticed\n\nYou can skip any step. Continue when you’re ready.\n\nBack\nContinue\n→"
+      ]
+    },
+    {
+      "id": "S09",
+      "observed": "Continued through all five steps with0 checked counters; reached Exercise complete."
+    },
+    {
+      "id": "S20",
+      "observed": "Helpful saved; visible Demo response · mock provider label and deterministic reply."
+    },
+    {
+      "id": "S17",
+      "observed": "Home shows Recently used:5-4-3-2-1 Grounding after completion; both exercise cards remain visible."
+    },
+    {
+      "id": "BC1-Grounding",
+      "observed": "Crisis route opened from Grounding."
+    },
+    {
+      "id": "BC1-loading-visible",
+      "observed": "Connecting state shows Cancel voice, Return Home and Crisis Support."
+    },
+    {
+      "id": "M11-M13",
+      "observed": "Scripted fictional ordinary request, optional supported suggestion and overlapping refusal/change appear as exact transient mock transcripts. Active is simulated; no remote audio or actual model behavior tested."
+    },
+    {
+      "id": "BC2-End",
+      "observed": "Mute→Muted; Unmute→Active; End→Closed with mock session.closed and data-mock-microphone-stopped=true."
+    },
+    {
+      "id": "BC1-loading",
+      "observed": "Clicked Crisis Support while Connecting; support opened without waiting for provider."
+    },
+    {
+      "id": "BC2-Home-loading",
+      "observed": "Return Home clicked during Connecting; Home immediately shows both exercises."
+    },
+    {
+      "id": "BC1-conversation",
+      "observed": "Crisis route opened from Active scripted voice; simulated microphone stopped.",
+      "stopped": "true"
+    },
+    {
+      "id": "S14",
+      "observed": "Mock voice POST503 produces Error and explicit failure copy; Return Home and Crisis Support remain available; fake microphone stopped.",
+      "stopped": "true"
+    },
+    {
+      "id": "BC1-failure",
+      "observed": "Crisis Support clicked after mock provider failure; independent support opened."
+    },
+    {
+      "id": "S16",
+      "observed": "History shows5 sessions newest first, completed/exited and durations distinct, Helpful feedback. One saved mock conversation opens user then assistant; voice conversations absent."
+    },
+    {
+      "id": "BC1-History",
+      "observed": "Opened Crisis Support from History list."
+    },
+    {
+      "id": "S22",
+      "observed": "Stopped isolated backend. History shows unavailable with Try again, Return Home and Crisis Support. Cached footer still says Backend ready; health status is a startup snapshot."
+    },
+    {
+      "id": "BC1-backend-offline",
+      "observed": "With isolated8190 stopped, Crisis Support opened from unavailable History; no contact link operated."
+    },
+    {
+      "id": "S15",
+      "observed": "After real isolated backend restart, same5 session rows and1 conversation appear. SQLite and scoped history JSON equal before/after."
+    }
+  ]
+}

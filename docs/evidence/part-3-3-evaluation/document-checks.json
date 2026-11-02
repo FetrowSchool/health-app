@@ -1,0 +1,12 @@
+{
+  "links_checked": 90,
+  "missing_links": [],
+  "scenario_counts": {
+    "recorded": 26,
+    "pass": 22,
+    "fail": 1,
+    "not_run": 3
+  },
+  "three_behavior_sections": true,
+  "screenshots": 11
+}

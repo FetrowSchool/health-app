@@ -1,8 +1,27 @@
-# Research-to-design mapping — current Grounding revision
+# Research-to-design mapping — current application and history
 
 R1–R4 and D1–D6 are attributed to the **instructor-provided Assignment 3 study summary (IST 402 course material)**. The following is design reasoning, not independent research citations or proof of clinical effectiveness.
 
+## Current mapping — November2, 2026
+
+| Instructor input | Implemented decision and tradeoff | Evidence/limit |
+| --- | --- | --- |
+| R1: Short guided duration | Breathing plans six4/6 cycles=60 active seconds; Grounding estimates70s with manual progression. Setup, pauses and optional continuation are separate. | Actual sessions can exceed90s by user choice; no forced completion. |
+| R2: Accessible safety | Local Crisis Support remains available independently of backend/models. | Tested routes/failures; external resource checks retain their original dates. |
+| R3: Stop/skip permission | Mood/feedback/counters optional; immediate Exit and voice End; Breathing can pause. | Speech respect for refusal is not yet scored. |
+| R4: User journey control | Both skills direct; manual Continue/Back/Finish; AI cannot auto-start a skill. | Choice/interaction is not evidence of correct breathing or emotional state. |
+| D1: Lower interface burden | Stable layout and direct conversation remove the old Simplify toggle/questionnaire. | Adaptive progressive contraction is not implemented; do not claim it is. |
+| D2: One action/instruction | One fixed phase or sensory step; no combined exercise dashboard. | Voice content is less predictable than app-owned instructions. |
+| D3: Low emotional cost | Neutral language, skippable check-in, no required typed disclosure or scores. | A skipped marker can be saved; it is not an emotion. |
+| D4: Persistent safety | Shared header plus an in-dialog action; local route during model/save failure. | No classifier or generated decision controls access. |
+| D5: Personalization without setup | Recently used uses latest completed supported exercise; card order unchanged. | No mood-based sorting, reset/preferences UI or new AI context from History. Existing text feedback may use optional mood plus up to3 scoped summaries. |
+| D6: Calm/accessibility | Muted palette, large labeled buttons, focus and reduced-motion alternative. | Limited rendered checks passed; full screen-reader/zoom/device checks remain pending. |
+
+These are interpretations of the instructor study summary, not clinical findings. Current [design](design.md), [flow](user-flow.md), [evaluation](evaluation/scenarios.md) and [verification](verification.md) are authoritative. The following dated revisions preserve earlier decisions and failed/revised approaches.
+
 ## Revised design approach — October 19, 2026
+
+Historical Grounding-only milestone; later current controls/data and History supersede older scope statements.
 
 STOP was initially selected because it was easy to implement. Developer review found its four reading-oriented instructions too passive. **5-4-3-2-1 Sensory Grounding** now replaces it in active selection: users can tap observable progress through the five supplied senses without typing/describing observations. This change is a documented revised design approach for AI-use/development evidence; exact instructions and the decision came from the developer, while implementation/migration/testing used the coding agent. It does not establish that Grounding improves mental health more than STOP.
 
@@ -59,17 +78,19 @@ The material below preserves the original proposal and its alternatives. STOP an
 
 ## Patterns inspected from Expedia Lite
 
-At the original project inspection, the Assignment 3 directory contained only Git metadata; there were no components to preserve or reuse locally. The adjacent [Expedia Lite README](../../Assignment%201/README.md) and these implementation files were inspected as read-only references. No source code, dependencies, data, or credentials were copied. Relative reference links assume the current sibling-folder arrangement.
+At the original project inspection, the Assignment 3 directory contained only Git metadata; there were no components to preserve or reuse locally. The adjacent Expedia Lite README and the file paths listed below were inspected as read-only pattern references at that milestone. They belong to a separate project and are intentionally not repository-relative hyperlinks: a standalone Pause checkout does not contain them. No private source content or travel data is reproduced. The later authorized provider configuration is documented separately; this historical design inspection did not copy credentials.
 
 | Inspected evidence | Pattern to adapt later | Boundary for Pause |
 | --- | --- | --- |
-| [frontend/src/api/travel.js](../../Assignment%201/frontend/src/api/travel.js), [frontend/package.json](../../Assignment%201/frontend/package.json), [backend/main.py](../../Assignment%201/backend/main.py) | Vue API client separated from FastAPI routes; frontend/backend organization. | Design smaller skill views with a shared safety header; travel forms, booking UI, maps, and menus are irrelevant. |
-| [backend/database.py](../../Assignment%201/backend/database.py), [backend/database_controller.py](../../Assignment%201/backend/database_controller.py) | SQLite connection helper, foreign keys, initialization, and backend data access. | Use a new minimal schema and synthetic data; copy no travelers/accounts or travel history. |
-| [backend/bi_controller.py](../../Assignment%201/backend/bi_controller.py) | Backend-only model client with bounded requests, safe errors, and injectable/mocked provider boundary. | Initial optional feedback uses approved neutral responses. For the later required RAG capability, adapt the validated read-only retrieval boundary with a new scoped schema, never unrestricted travel SQL. Navigation/instructions remain deterministic. |
-| [backend/config.py](../../Assignment%201/backend/config.py) | Explicit environment loading from a known path and internal credential access; adapt the target to Pause’s backend/.env. | Choose provider later; no actual secrets read or copied. Never expose keys through frontend environment variables. |
-| [AGENTS.md](../../Assignment%201/AGENTS.md), [backend/test_bi_controller.py](../../Assignment%201/backend/test_bi_controller.py), [README verification](../../Assignment%201/README.md#verification) | Backend tests, mocked model failures, frontend lint/build, manual flow and restart-persistence checks. | Write checks for Pause requirements once implemented; previous project's reported passes are not Pause test results. |
+| `frontend/src/api/travel.js` (separate-project reference), `frontend/package.json` (separate-project reference), `backend/main.py` (separate-project reference) | Vue API client separated from FastAPI routes; frontend/backend organization. | Design smaller skill views with a shared safety header; travel forms, booking UI, maps, and menus are irrelevant. |
+| `backend/database.py` (separate-project reference), `backend/database_controller.py` (separate-project reference) | SQLite connection helper, foreign keys, initialization, and backend data access. | Use a new minimal schema and synthetic data; copy no travelers/accounts or travel history. |
+| `backend/bi_controller.py` (separate-project reference) | Backend-only model client with bounded requests, safe errors, and injectable/mocked provider boundary. | Initial optional feedback uses approved neutral responses. For the later required RAG capability, adapt the validated read-only retrieval boundary with a new scoped schema, never unrestricted travel SQL. Navigation/instructions remain deterministic. |
+| `backend/config.py` (separate-project reference) | Explicit environment loading from a known path and internal credential access; adapt the target to Pause’s backend/.env. | Choose provider later; no actual secrets read or copied. Never expose keys through frontend environment variables. |
+| `AGENTS.md` (separate-project reference), `backend/test_bi_controller.py` (separate-project reference), `README verification` (separate-project reference) | Backend tests, mocked model failures, frontend lint/build, manual flow and restart-persistence checks. | Write checks for Pause requirements once implemented; previous project's reported passes are not Pause test results. |
 
 ## Other tradeoffs
+
+Historical Part3.1 planning notes: backgrounding now pauses Breathing rather than ending it, History is implemented, and the old ordering/reset proposal is not current.
 
 A once-daily popup gives a lightweight signal but adds friction, stores a potentially sensitive self-description, and can break its daily guarantee if browser storage is unavailable. Keep Skip visible, record no mood for Skip, and prefer access over repeated prompts. Stable card order reduces relearning at the expense of stronger recommendation personalization.
 
@@ -82,6 +103,8 @@ The row alternatives explain why the selected approach is preferred: R1 trades a
 
 
 ### October 22 closed-loop refinement
+
+Historical Hold/Tap/Observe approach, superseded by October26 hold-to-run; automatic completion described here is not current.
 
 Developer-requested button-state feedback supports D2/D3 observable action/response and D5 user control: immediate neutral cues, alternative Tap/Observe, no forced repeats. D4/D6 safety and access remain independent of tracking/model failures. This is an interface-design rationale mapped to the instructor Assignment3 study summary, not evidence that button timing establishes correct breathing or clinical effectiveness. Added interaction/choice burden is mitigated by Observe and unchanged automatic60-second completion.
 
@@ -98,3 +121,10 @@ Tradeoffs: sustained press can fatigue users; the accessible alternative avoids 
 The developer replaces the predefined questionnaire with the existing AI conversation so suggestions can arise naturally in context. Direct Home exercise access and manual choice preserve R3/R4 user control; removing a separate focus/suggestion workflow reduces D1/D3 setup/reading and D2 competing choices. The Home label uses the developer’s browser wording, stop to chat / Ai assistant conversation; the page title Talk to Pause makes the destination explicit. Existing persona and nonclinical boundaries remain unchanged. R1–R4/D1–D6 are instructor-provided Assignment3 study-summary labels, not evidence of clinical effectiveness.
 
 Tradeoffs: open conversation is more flexible but depends on microphone/audio/network and has less predictable replies. No new paid-model behavior is claimed; voice lifecycle uses mocks and existing integration. The developer explicitly kept voice and existing post-exercise text feedback rather than adding typed chat. Both exercises remain independently usable, support stays independent, historical recommendation data is retained, and no voice transcripts/audio are persisted. See [verification](verification.md).
+
+
+## Part3.3 History and lightweight personalization — November1, 2026
+
+User-requested History makes previously saved activity inspectable (D4/D5 control/transparency) without adding a questionnaire or required configuration (D1/D3). Neutral completion/exit/unfinished labels and separate active/wall durations distinguish observed app activity from self-report or interpretation; no emotional/clinical inference follows from counts or feedback. Home’s optional label uses the latest completed current exercise; both cards remain equal and unchanged. Generic previews avoid exposing message/mood text on the list, while explicit opening reveals the owner’s actual saved conversation. R1–R4/D1–D6 retain their attribution to the instructor-provided Assignment3 study summary; this is an interface rationale, not clinical-effectiveness evidence.
+
+Tradeoffs:20 items per section avoids unbounded payloads but older records require future pagination; no records are deleted. Local UUID scoping has no account recovery/authentication; clearing storage changes the accessible scope. Voice remains transient, so it is absent from History. Message content is escaped rather than interpreted as instructions. Read failures omit Home personalization and keep navigation/support available. No new information goes to a model provider, and no skill timing changes. Actual test/API/SQLite/browser results are in [verification](verification.md).

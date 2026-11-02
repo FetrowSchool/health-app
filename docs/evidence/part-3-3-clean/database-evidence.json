@@ -1,0 +1,247 @@
+{
+  "method": "Fresh clean SQLite, read-only sqlite3 + scoped GET + actual DOM comparison; fictional records only, identity omitted",
+  "counts": {
+    "app_metadata": 1,
+    "exercise_sessions": 4,
+    "daily_mood_checkins": 1,
+    "conversations": 1,
+    "messages": 2
+  },
+  "checks": {
+    "integrity_ok": true,
+    "foreign_keys_valid": true,
+    "sqlite_api_ui_message_ids_order_equal": true,
+    "message_objects_equal_after_UTC_normalization": true,
+    "message_contents_match_UI": true,
+    "conversation_id_equal": true,
+    "session_ids_match_UI": true
+  },
+  "rows": {
+    "app_metadata": [
+      {
+        "key": "schema_version",
+        "value": "7"
+      }
+    ],
+    "exercise_sessions": [
+      {
+        "id": "2449e24e-75a3-43a3-ab72-cd4bfcb1398f",
+        "exercise_type": "paced_breathing",
+        "started_at": "2026-11-02T17:18:25.828000+00:00",
+        "ended_at": "2026-11-02T17:19:37.866000+00:00",
+        "status": "completed",
+        "duration_seconds": 72.038,
+        "entry_duration_seconds": 7.208,
+        "planned_duration_seconds": 60,
+        "feedback": "helpful",
+        "interaction_mode": null,
+        "inhale_interactions": null,
+        "exhale_interactions": null,
+        "completed_cycles": null,
+        "active_duration_seconds": 72.036,
+        "optional_continuation_seconds": 12.036,
+        "active_completed_cycles": 7
+      },
+      {
+        "id": "750d28b9-e9bd-46b0-9c11-79896cbc0bfc",
+        "exercise_type": "grounding_54321",
+        "started_at": "2026-11-02T17:19:42.833000+00:00",
+        "ended_at": "2026-11-02T17:20:12.146000+00:00",
+        "status": "completed",
+        "duration_seconds": 29.313,
+        "entry_duration_seconds": 0.001,
+        "planned_duration_seconds": 70,
+        "feedback": "skipped",
+        "interaction_mode": null,
+        "inhale_interactions": null,
+        "exhale_interactions": null,
+        "completed_cycles": null,
+        "active_duration_seconds": null,
+        "optional_continuation_seconds": null,
+        "active_completed_cycles": null
+      },
+      {
+        "id": "36f8ae4b-1cc0-4aa9-9bb3-05063e24adc7",
+        "exercise_type": "paced_breathing",
+        "started_at": "2026-11-02T17:21:22.897000+00:00",
+        "ended_at": "2026-11-02T17:21:23.365000+00:00",
+        "status": "exited",
+        "duration_seconds": 0.468,
+        "entry_duration_seconds": 0.292,
+        "planned_duration_seconds": 60,
+        "feedback": null,
+        "interaction_mode": null,
+        "inhale_interactions": null,
+        "exhale_interactions": null,
+        "completed_cycles": null,
+        "active_duration_seconds": 0.002,
+        "optional_continuation_seconds": 0.0,
+        "active_completed_cycles": 0
+      },
+      {
+        "id": "d7c6d14f-ac49-435b-9d33-829b17d914bc",
+        "exercise_type": "grounding_54321",
+        "started_at": "2026-11-02T17:21:23.665000+00:00",
+        "ended_at": "2026-11-02T17:21:23.998000+00:00",
+        "status": "exited",
+        "duration_seconds": 0.333,
+        "entry_duration_seconds": 0.001,
+        "planned_duration_seconds": 70,
+        "feedback": null,
+        "interaction_mode": null,
+        "inhale_interactions": null,
+        "exhale_interactions": null,
+        "completed_cycles": null,
+        "active_duration_seconds": null,
+        "optional_continuation_seconds": null,
+        "active_completed_cycles": null
+      }
+    ],
+    "daily_mood_checkins": [
+      {
+        "local_date": "2026-11-02",
+        "mood": "skipped",
+        "created_at": "2026-11-02T17:18:03.183470+00:00"
+      }
+    ],
+    "conversations": [
+      {
+        "id": "f17f74de-22d5-4af5-91ee-aac9939b736f",
+        "session_id": "2449e24e-75a3-43a3-ab72-cd4bfcb1398f",
+        "exercise_type": "paced_breathing",
+        "feedback": "helpful",
+        "created_at": "2026-11-02T17:19:42.187681+00:00",
+        "provider_mode": "mock",
+        "status": "succeeded",
+        "failure_code": null,
+        "kind": "feedback",
+        "focus": null,
+        "context_json": "{\"local_date\": \"2026-11-02\", \"mood\": null, \"recent\": [{\"exercise_type\": \"paced_breathing\", \"status\": \"completed\", \"feedback\": \"helpful\"}]}"
+      }
+    ],
+    "messages": [
+      {
+        "id": "0f5471dd-3ae3-4882-907a-cb240254b658",
+        "conversation_id": "f17f74de-22d5-4af5-91ee-aac9939b736f",
+        "ordinal": 1,
+        "role": "user",
+        "content": "I selected Helpful after the Paced Breathing exercise.",
+        "created_at": "2026-11-02T17:19:42.187681+00:00"
+      },
+      {
+        "id": "63060c1e-290f-4b3b-8226-ed35e88ef2ea",
+        "conversation_id": "f17f74de-22d5-4af5-91ee-aac9939b736f",
+        "ordinal": 2,
+        "role": "assistant",
+        "content": "Feedback noted. You can choose what to do next.",
+        "created_at": "2026-11-02T17:19:42.189045+00:00"
+      }
+    ]
+  },
+  "history_api": {
+    "sessions": [
+      {
+        "id": "d7c6d14f-ac49-435b-9d33-829b17d914bc",
+        "exercise_type": "grounding_54321",
+        "started_at": "2026-11-02T17:21:23.665000Z",
+        "ended_at": "2026-11-02T17:21:23.998000Z",
+        "status": "exited",
+        "duration_seconds": 0.333,
+        "active_duration_seconds": null,
+        "feedback": null
+      },
+      {
+        "id": "36f8ae4b-1cc0-4aa9-9bb3-05063e24adc7",
+        "exercise_type": "paced_breathing",
+        "started_at": "2026-11-02T17:21:22.897000Z",
+        "ended_at": "2026-11-02T17:21:23.365000Z",
+        "status": "exited",
+        "duration_seconds": 0.468,
+        "active_duration_seconds": 0.002,
+        "feedback": null
+      },
+      {
+        "id": "750d28b9-e9bd-46b0-9c11-79896cbc0bfc",
+        "exercise_type": "grounding_54321",
+        "started_at": "2026-11-02T17:19:42.833000Z",
+        "ended_at": "2026-11-02T17:20:12.146000Z",
+        "status": "completed",
+        "duration_seconds": 29.313,
+        "active_duration_seconds": null,
+        "feedback": "skipped"
+      },
+      {
+        "id": "2449e24e-75a3-43a3-ab72-cd4bfcb1398f",
+        "exercise_type": "paced_breathing",
+        "started_at": "2026-11-02T17:18:25.828000Z",
+        "ended_at": "2026-11-02T17:19:37.866000Z",
+        "status": "completed",
+        "duration_seconds": 72.038,
+        "active_duration_seconds": 72.036,
+        "feedback": "helpful"
+      }
+    ],
+    "conversations": [
+      {
+        "id": "f17f74de-22d5-4af5-91ee-aac9939b736f",
+        "created_at": "2026-11-02T17:19:42.187681Z",
+        "kind": "feedback",
+        "status": "succeeded",
+        "exercise_type": "paced_breathing",
+        "feedback": "helpful",
+        "provider_mode": "mock",
+        "preview": "Saved feedback after Paced Breathing."
+      }
+    ],
+    "recent_completed_exercise": "grounding_54321"
+  },
+  "conversation_api": {
+    "id": "f17f74de-22d5-4af5-91ee-aac9939b736f",
+    "session_id": "2449e24e-75a3-43a3-ab72-cd4bfcb1398f",
+    "exercise_type": "paced_breathing",
+    "feedback": "helpful",
+    "created_at": "2026-11-02T17:19:42.187681Z",
+    "provider_mode": "mock",
+    "status": "succeeded",
+    "failure_code": null,
+    "messages": [
+      {
+        "id": "0f5471dd-3ae3-4882-907a-cb240254b658",
+        "conversation_id": "f17f74de-22d5-4af5-91ee-aac9939b736f",
+        "ordinal": 1,
+        "role": "user",
+        "content": "I selected Helpful after the Paced Breathing exercise.",
+        "created_at": "2026-11-02T17:19:42.187681Z"
+      },
+      {
+        "id": "63060c1e-290f-4b3b-8226-ed35e88ef2ea",
+        "conversation_id": "f17f74de-22d5-4af5-91ee-aac9939b736f",
+        "ordinal": 2,
+        "role": "assistant",
+        "content": "Feedback noted. You can choose what to do next.",
+        "created_at": "2026-11-02T17:19:42.189045Z"
+      }
+    ],
+    "fallback_message": null,
+    "saved": true,
+    "kind": "feedback",
+    "focus": null,
+    "context_used": {
+      "local_date": "2026-11-02",
+      "mood": null,
+      "recent": [
+        {
+          "exercise_type": "paced_breathing",
+          "status": "completed",
+          "feedback": "helpful"
+        }
+      ]
+    },
+    "recommendation": null
+  },
+  "restart": {
+    "all_rows_equal": true,
+    "history_equal": true,
+    "method": "Real FastAPI PID86553 stopped/restarted PID87546; same clean database path"
+  }
+}

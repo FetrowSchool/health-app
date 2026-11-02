@@ -1,0 +1,44 @@
+{
+  "backend": {
+    "health": {
+      "status": "ok",
+      "database": "ready",
+      "model_configured": false
+    },
+    "voice_config": {
+      "status": "unconfigured",
+      "duration_seconds": 60
+    }
+  },
+  "dev": {
+    "health": {
+      "status": "ok",
+      "database": "ready",
+      "model_configured": false
+    },
+    "voice_config": {
+      "status": "unconfigured",
+      "duration_seconds": 60
+    }
+  },
+  "preview": {
+    "health": {
+      "status": "ok",
+      "database": "ready",
+      "model_configured": false
+    },
+    "voice_config": {
+      "status": "unconfigured",
+      "duration_seconds": 60
+    }
+  },
+  "database_created": true,
+  "schema_version": "7",
+  "initial_activity_counts": {
+    "exercise_sessions": 0,
+    "daily_mood_checkins": 0,
+    "conversations": 0,
+    "messages": 0
+  },
+  "env_absent": true
+}

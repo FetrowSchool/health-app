@@ -1,0 +1,12 @@
+{
+  "python_packages": {
+    "fastapi": "0.162.0",
+    "uvicorn": "0.54.0",
+    "python-dotenv": "1.2.4",
+    "httpx": "0.28.1",
+    "pydantic": "2.14.2",
+    "starlette": "1.10.0"
+  },
+  "env_file_absent": true,
+  "sqlite_absent_before_start": true
+}
