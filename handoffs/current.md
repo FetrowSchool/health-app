@@ -1,4 +1,16 @@
-# Current handoff — Submission documentation organized, November 2, 2026
+# Current handoff — Part 3.3 main publication, November 2, 2026
+
+User explicitly authorized merge to main, first GitHub upload, report hash update and a second upload without changing the hash again. Committed120 reviewed files on part-2, then fast-forwarded main without conflicts. Application commit: 9b4e53081576852e8ff4d62da8aca1d48fc36d7c; first push to origin/main succeeded and git ls-remote confirmed that exact hash. The report now cites this application commit. Its prose and owner-supplied video link were preserved; only its hash field changed. The subsequent metadata commit intentionally does not cite itself.
+
+Post-merge verification used the existing credential-free validation copy:85 source/test/dependency files byte-identical to main,95 backend tests passed in1.664s,85 frontend tests passed in109.530375ms,37-module production build passed in114ms. No installation, live call, original SQLite change or runtime restart.120 reviewed files contained zero configured credential matches; saved environments/databases/dependencies/build output were excluded. Offloaded iCloud screenshots/Git objects were restored locally without content changes to allow publication.
+
+All104 previously untracked files were included in the application commit; the saved inventory is historical. README/checklist/evidence index now distinguish that checkpoint from publication. Known BC2 partial/BC3 voice-content failures and pending live semantic/accessibility work remain documented; publication is not a new safety sign-off. The owner supplied a demonstration URL in report.md; its playback/audience access and a separate process recording have not been verified here. No feature changes or additional paid-call permission inferred.
+
+The metadata commit contains only report/publication documentation. Verify final remote main equals local HEAD after the second push; leave the report pointing at the application commit above. No further hash update is needed. Next developer work is recording/access review and any separately requested fixes.
+
+---
+
+# Previous handoff — Submission documentation organized, November 2, 2026
 
 Branch part-2, base48f912d1936142e230ae427f8592c616a6b7c6bf. Documentation-only increment complete for review. Created [AI-USE](../AI-USE.md), [curated redacted development log](../docs/ai-development-log.md), [submission checklist](../docs/submission-checklist.md) and [final checks/evidence index](../docs/evidence/part-3-3-submission/index.md). Reviewed README/AGENTS/design/research/flow/contracts/verification/evaluation/demo. Corrected stale current summaries and labeled superseded STOP, questionnaire, mode-selector/schema/deferral descriptions as history; retained useful evidence. Eleven non-portable sibling-project links became unlinked historical descriptions, without copying private content.
 

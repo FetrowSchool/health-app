@@ -1,5 +1,7 @@
 # Submission documentation and final automated checks
 
+Publication update: the application/evidence snapshot is now committed on main as `9b4e53081576852e8ff4d62da8aca1d48fc36d7c`. The untracked inventory and no-commit statements below describe the earlier documentation-only checkpoint. The later publication entry in [verification](../../verification.md) records the authorized upload and report-reference update.
+
 November 2, 2026 · branch `part-2` · inspection base `48f912d1936142e230ae427f8592c616a6b7c6bf`. This is not a final submission commit. No functionality, credentials, runtime database, report.md, commit or push was changed by this organization task.
 
 ## Submission documents
